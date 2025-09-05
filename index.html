@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJG Hari Pravin | Author, Lyricist, Tech Consultant</title>
+    
+    <!-- Quasar v2 and Vue 3 CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.16.4/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    
+    <!-- Font Awesome for social icons -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Animate.css for scroll animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Google Fonts: Playful and Multilingual -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Baloo+Thambi+2:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8A2BE2; /* BlueViolet */
+            --secondary-color: #FF6347; /* Tomato */
+            --accent-color: #FFD700; /* Gold */
+            --bg-light: #F8F7F4;
+            --text-dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-dark);
+            /* Animated gradient background */
+            background: linear-gradient(-45deg, #f8f7f4, #fde2e4, #e2eafc, #d2f6c5);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .font-tamil {
+            font-family: 'Baloo Thambi 2', cursive;
+        }
+        h1, h2, h3, h4, h5, h6, .q-tab__label, .nav-main-text {
+            font-family: 'Fredoka One', cursive;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .playful-card {
+            border-radius: 20px;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .playful-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--accent-color);
+        }
+        .scroll-animate {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .lyrics-text {
+            white-space: pre-wrap;
+            font-family: 'Baloo Thambi 2', cursive;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .nav-main-text { line-height: 1.2; font-size: 1rem; font-weight: bold; }
+        .nav-sub-text { font-size: 0.7rem; opacity: 0.7; line-height: 1; font-family: 'Nunito', sans-serif; }
+        .nav-sub-text-ta { font-size: 0.75rem; opacity: 0.8; line-height: 1.1; }
+        .badge-chest-card { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+
+    </style>
+</head>
+
+<body>
+    <div id="q-app">
+        <q-layout view="hHh lpR fFf" class="bg-transparent">
+
+            <!-- Header with Gamified Progress Bar -->
+            <q-header elevated class="bg-white text-dark shadow-2">
+                <q-toolbar>
+                    <q-toolbar-title class="text-weight-bold" style="font-size: 1.5rem; color: var(--primary-color);">
+                        MJG Hari Pravin
+                    </q-toolbar-title>
+                    <q-tabs class="gt-sm" shrink stretch indicator-color="secondary">
+                        <q-tab name="about" @click="scrollTo('about')">
+                            <div class="column items-center no-wrap q-py-xs">
+                                <div class="nav-main-text">About Me</div>
+                                <div class="nav-sub-text">Level 1</div>
+                                <div class="nav-sub-text-ta font-tamil">(அறிமுகம்)</div>
+                            </div>
+                        </q-tab>
+                        <q-tab name="books" @click="scrollTo('books')">
+                             <div class="column items-center no-wrap q-py-xs">
+                                <div class="nav-main-text">My Books</div>
+                                <div class="nav-sub-text">Level 2</div>
+                                <div class="nav-sub-text-ta font-tamil">(புத்தகங்கள்)</div>
+                            </div>
+                        </q-tab>
+                         <q-tab name="music" @click="scrollTo('music')">
+                             <div class="column items-center no-wrap q-py-xs">
+                                <div class="nav-main-text">My Songs</div>
+                                <div class="nav-sub-text">Level 3</div>
+                                <div class="nav-sub-text-ta font-tamil">(பாடல்கள்)</div>
+                            </div>
+                        </q-tab>
+                        <q-tab name="profession" @click="scrollTo('profession')">
+                             <div class="column items-center no-wrap q-py-xs">
+                                <div class="nav-main-text">My Work</div>
+                                <div class="nav-sub-text">Level 4</div>
+                                <div class="nav-sub-text-ta font-tamil">(பணி)</div>
+                            </div>
+                        </q-tab>
+                        <q-tab name="contact" @click="scrollTo('contact')">
+                             <div class="column items-center no-wrap q-py-xs">
+                                <div class="nav-main-text">Connect</div>
+                                <div class="nav-sub-text">Final Level</div>
+                                <div class="nav-sub-text-ta font-tamil">(தொடர்புக்கு)</div>
+                            </div>
+                        </q-tab>
+                    </q-tabs>
+                                        
+                    <q-btn flat dense round @click="drawer = !drawer" aria-label="Menu" icon="menu" class="lt-md" color="primary"></q-btn>
+                </q-toolbar>
+                <q-linear-progress :value="scrollProgress" color="accent" animation-speed="300" />
+            </q-header>
+
+            <!-- Mobile Drawer -->
+            <q-drawer v-model="drawer" :width="250" :breakpoint="500" overlay elevated content-class="bg-light text-dark">
+                <q-scroll-area class="fit">
+                    <q-list>
+                        <template v-for="(menuItem, index) in menuList">
+                            <q-item clickable v-ripple @click="scrollTo(menuItem.target)">
+                                <q-item-section avatar>
+                                    <q-icon :name="menuItem.icon" color="primary"></q-icon>
+                                </q-item-section>
+                                <q-item-section class="text-weight-bold">{{ menuItem.label }}</q-item-section>
+                            </q-item>
+                        </template>
+                         <q-item clickable v-ripple @click="badgeDialog = true">
+                                <q-item-section avatar>
+                                    <q-icon name="o_military_tech" color="primary"></q-icon>
+                                </q-item-section>
+                                <q-item-section class="text-weight-bold">Badge Chest ({{ gameState.totalXp }} XP)</q-item-section>
+                            </q-item>
+                    </q-list>
+                </q-scroll-area>
+            </q-drawer>
+
+            <!-- Page Content -->
+            <q-page-container>
+                <q-page class="q-pa-md">
+                    <!-- Hero Section -->
+                    <section id="home" class="row items-center justify-center text-center" style="min-height: 90vh;">
+                        <div>
+                            <h1 class="text-h2 text-weight-bolder q-mb-md gradient-text">MJG Hari Pravin</h1>
+                            <p class="text-h5 text-grey-8">Author • Lyricist • Tech Consultant</p>
+                            <p class="text-h6 text-grey-7 font-tamil">எழுத்தாளர் • பாடலாசிரியர் • தொழில்நுட்ப ஆலோசகர்</p>
+                            <div class="q-mt-lg text-grey-7">Scroll to begin the adventure!</div>
+                             <q-icon name="fas fa-chevron-down" size="sm" class="q-mt-sm animate__animated animate__bounce animate__infinite"></q-icon>
+                        </div>
+                    </section>
+                    
+                    <!-- About Section -->
+                    <section id="about" class="q-py-xl q-px-md scroll-animate">
+                        <div class="q-mx-auto" style="max-width: 900px;">
+                             <div class="text-center">
+                                 <div class="level-badge">LEVEL 1</div>
+                                <h2 class="text-h4 text-weight-bold q-mb-md gradient-text">The Adventure Begins <br><span class="font-tamil text-h6 text-grey-7">(ஒரு அறிமுகம்)</span></h2>
+                             </div>
+                            <div class="row items-center q-col-gutter-xl q-mt-lg">
+                                <div class="col-12 col-md-4">
+                                    <q-img src="https://placehold.co/400x400/F8F7F4/8A2BE2?text=MJG" alt="MJG Hari Pravin" class="rounded-borders" style="border-radius: 50%; border: 5px solid var(--secondary-color);"></q-img>
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <p class="text-body1 text-grey-8 q-mb-md">My quest has always been to understand the world around us, and in turn, ourselves. I see myself as an agnostic in matters of faith and an ambivert who finds fulfillment both in quiet contemplation and in engaging with others. Humility, adaptability, and open-mindedness are the guiding principles of my journey.</p>
+                                    <p class="text-body1 text-grey-8">My writing is an extension of this search, exploring life, its mysterious workings, and its purpose. From using gamification to achieve success to finding life lessons on a breakfast plate, I strive to uncover the extraordinary within the ordinary, making complex ideas accessible and engaging.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Books Section -->
+                    <section id="books" class="q-py-xl q-px-md scroll-animate">
+                        <div class="q-mx-auto" style="max-width: 1200px;">
+                            <div class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto;">
+                                <div class="level-badge">LEVEL 2</div>
+                                <h2 class="text-h4 text-weight-bold gradient-text">Authored Worlds <br><span class="font-tamil text-h6 text-grey-7">(என் புத்தகங்கள்)</span></h2>
+                                <p class="q-mt-md text-grey-7">I enjoy demystifying complex topics through storytelling. My book "AI எனும் நான்" is with the publisher, while the others are soon to be published. Click on a book to learn more!</p>
+                            </div>
+                            <div class="row q-col-gutter-lg justify-center">
+                                <div class="col-12 col-sm-6 col-md-3" v-for="book in books" :key="book.title" @click="openBookDialog(book)">
+                                    <q-card class="playful-card full-height column" :style="{ backgroundColor: book.color }">
+                                        <q-card-section class="text-center q-pa-lg">
+                                            <q-icon :name="book.icon" size="3rem" color="white" class="q-mb-md"></q-icon>
+                                            <div class="text-h6 text-weight-bold font-tamil text-white">{{ book.title }}</div>
+                                            <p class="text-white q-mt-sm opacity-80">{{ book.shortDescription }}</p>
+                                        </q-card-section>
+                                    </q-card>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Music Section -->
+                    <section id="music" class="q-py-xl q-px-md scroll-animate">
+                         <div class="q-mx-auto" style="max-width: 1000px;">
+                            <div class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto;">
+                                <div class="level-badge">LEVEL 3</div>
+                                <h2 class="text-h4 text-weight-bold gradient-text">Lyrics & Melodies <br><span class="font-tamil text-h6 text-grey-7">(என் பாடல்கள்)</span></h2>
+                                <p class="q-mt-md text-grey-7">I write lyrics from the heart and collaborate with AI tools like Suno and Sora to bring the melodies, vocals, and visuals to life. Click a song to read the lyrics!</p>
+                            </div>
+                            <div class="row q-col-gutter-lg justify-center">
+                                <div class="col-12 col-md-6" v-for="song in songs" :key="song.title">
+                                     <q-card class="playful-card full-height" flat style="background-color: #fff;" @click="openSongDialog(song)">
+                                        <q-item class="q-pa-md">
+                                            <q-item-section avatar>
+                                                 <q-icon :name="song.icon" size="3rem" :style="{ color: song.color }"></q-icon>
+                                            </q-item-section>
+                                            <q-item-section>
+                                                <q-item-label class="text-h6 text-weight-bold font-tamil" :style="{ color: song.color }">{{ song.title }}</q-item-label>
+                                                <q-item-label caption class="text-grey-7">{{ song.shortDescription }}</q-item-label>
+                                            </q-item-section>
+                                             <q-item-section side>
+                                                <q-btn :href="song.url" target="_blank" type="a" round color="primary" icon="fab fa-youtube" @click.stop />
+                                             </q-item-section>
+                                        </q-item>
+                                    </q-card>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                     <!-- Profession Section -->
+                    <section id="profession" class="q-py-xl q-px-md scroll-animate">
+                        <div class="q-mx-auto" style="max-width: 800px;">
+                            <div class="text-center">
+                                <div class="level-badge">LEVEL 4</div>
+                                <h2 class="text-h4 text-weight-bold q-mb-sm gradient-text">My Tech Journey <br><span class="font-tamil text-h6 text-grey-7">(என் தொழில்நுட்ப பயணம்)</span></h2>
+                                <p class="text-h6 text-grey-7 q-mb-lg">Co-Founder @ Krazy Buddy Technologies</p>
+                                <p class="text-body1 text-grey-8">With over 25+ years in the tech industry, I help companies turn great ideas into impactful realities. I specialize in product strategy, system design, and leading cross-functional teams to build high-quality digital solutions. My goal is to blend technology with agile principles to solve real-world problems and deliver value by creating products that are not only functional but also meaningful and user-centric.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Contact Section -->
+                    <section id="contact" class="q-py-xl q-px-md scroll-animate">
+                        <div class="q-mx-auto text-center" style="max-width: 600px;">
+                            <div class="level-badge">FINAL LEVEL</div>
+                            <h2 class="text-h4 text-weight-bold gradient-text">Connect & Collaborate <br><span class="font-tamil text-h6 text-grey-7">(தொடர்புக்கு)</span></h2>
+                             <p class="q-mt-md text-grey-7">I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great. Let's get in touch!</p>
+                            <div class="q-mt-lg row justify-center q-gutter-md">
+                                <q-btn v-for="social in socials" :key="social.label" round size="lg" :color="social.color" text-color="white" :icon="social.icon" :href="social.href" target="_blank" type="a">
+                                    <q-tooltip>{{ social.label }}</q-tooltip>
+                                </q-btn>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Floating Action Button for Badge Chest -->
+                    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+                        <q-btn fab icon="o_military_tech" color="primary" @click="badgeDialog = true">
+                            <q-badge color="secondary" floating>{{ gameState.totalXp }} XP</q-badge>
+                            <q-tooltip>Badge Chest</q-tooltip>
+                        </q-btn>
+                    </q-page-sticky>
+
+                </q-page>
+            </q-page-container>
+            
+            <!-- Book Details Dialog -->
+            <q-dialog v-model="bookDialog" v-if="selectedBook">
+                <q-card class="playful-card" style="width: 500px; max-width: 90vw;" :style="{ borderTop: `10px solid ${selectedBook.color}` }">
+                    <q-card-section class="text-center">
+                        <q-icon :name="selectedBook.icon" size="4rem" :style="{ color: selectedBook.color }"></q-icon>
+                        <div class="text-h5 text-weight-bold font-tamil q-mt-md">{{ selectedBook.title }}</div>
+                    </q-card-section>
+                    <q-card-section class="q-pt-none">
+                        <p class="text-body1 text-grey-8">{{ selectedBook.longDescription }}</p>
+                    </q-card-section>
+                    <q-card-actions align="right" class="q-pa-md bg-grey-2">
+                        <q-btn flat label="Close" color="primary" v-close-popup />
+                        <q-btn :href="selectedBook.buyUrl" target="_blank" type="a" unelevated color="primary" icon="shopping_cart" label="Buy Now" class="q-ml-sm" />
+                    </q-card-actions>
+                </q-card>
+            </q-dialog>
+
+             <!-- Song Details Dialog -->
+            <q-dialog v-model="songDialog" v-if="selectedSong">
+                <q-card class="playful-card" style="width: 600px; max-width: 90vw;" :style="{ borderTop: `10px solid ${selectedSong.color}` }">
+                     <q-card-section class="text-center">
+                        <q-icon :name="selectedSong.icon" size="4rem" :style="{ color: selectedSong.color }"></q-icon>
+                        <div class="text-h5 text-weight-bold font-tamil q-mt-md">{{ selectedSong.title }}</div>
+                        <p class="text-grey-7 q-mt-sm">{{ selectedSong.longDescription }}</p>
+                    </q-card-section>
+                    <q-card-section v-if="selectedSong.lyrics" style="max-height: 40vh" class="scroll">
+                        <p class="lyrics-text text-grey-8" :class="{'font-tamil': selectedSong.title !== 'என் வாழ்வின் சாராம்சம்' && selectedSong.title !== 'அன்னை கீதம்'}">{{ selectedSong.lyrics }}</p>
+                    </q-card-section>
+                    <q-card-actions align="right" class="q-pa-md bg-grey-2">
+                        <q-btn flat label="Close" color="primary" v-close-popup />
+                        <q-btn :href="selectedSong.url" target="_blank" type="a" unelevated color="primary" icon="fab fa-youtube" label="Watch on YouTube" class="q-ml-sm" />
+                    </q-card-actions>
+                </q-card>
+            </q-dialog>
+
+             <!-- Badge Chest Dialog -->
+            <q-dialog v-model="badgeDialog">
+                <q-card class="playful-card badge-chest-card" style="width: 500px; max-width: 90vw;">
+                    <q-card-section class="text-center bg-primary text-white">
+                        <div class="text-h5">My Adventure</div>
+                        <div class="text-subtitle1">Total XP: {{ gameState.totalXp }}</div>
+                    </q-card-section>
+                     <q-card-section class="q-pa-md">
+                        <div v-if="earnedBadgesList.length === 0" class="text-center text-grey-7 q-py-lg">
+                             <q-icon name="o_explore" size="4rem" class="q-mb-md"></q-icon>
+                            <div>Your badge collection is empty. Start scrolling to earn badges!</div>
+                        </div>
+                        <q-list separator v-else>
+                            <q-item v-for="badge in earnedBadgesList" :key="badge.label">
+                                <q-item-section avatar>
+                                    <q-icon :name="badge.badgeIcon" color="accent" size="lg" />
+                                </q-item-section>
+                                <q-item-section>
+                                    <q-item-label class="text-weight-bold">{{ badge.badgeName }}</q-item-label>
+                                    <q-item-label caption>+{{ badge.xp }} XP</q-item-label>
+                                </q-item-section>
+                            </q-item>
+                        </q-list>
+                    </q-card-section>
+                    <q-card-actions align="right">
+                        <q-btn flat label="Close" color="primary" v-close-popup />
+                    </q-card-actions>
+                </q-card>
+            </q-dialog>
+
+        </q-layout>
+    </div>
+
+    <!-- Vue 3 & Quasar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.16.4/dist/quasar.umd.prod.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        const { ref, reactive, onMounted, onBeforeUnmount, toRefs, computed } = Vue;
+
+        const app = Vue.createApp({
+            setup() {
+                const $q = Quasar.useQuasar();
+
+                const state = reactive({
+                    drawer: false,
+                    scrollProgress: 0,
+                    bookDialog: false,
+                    songDialog: false,
+                    badgeDialog: false,
+                    selectedBook: null,
+                    selectedSong: null,
+                    gameState: {
+                        totalXp: 0,
+                        earnedBadges: [],
+                    },
+                });
+
+                let observer = null;
+
+                const menuList = [
+                    { label: 'About Me', target: 'about', icon: 'person', badgeIcon: 'o_face', badgeName: 'Explorer Badge', xp: 50 },
+                    { label: 'My Books', target: 'books', icon: 'auto_stories', badgeIcon: 'o_auto_stories', badgeName: 'Author Badge', xp: 100 },
+                    { label: 'My Songs', target: 'music', icon: 'music_note', badgeIcon: 'o_music_note', badgeName: 'Lyricist Badge', xp: 100 },
+                    { label: 'My Work', target: 'profession', icon: 'construction', badgeIcon: 'o_construction', badgeName: 'Techie Badge', xp: 100 },
+                    { label: 'Connect', target: 'contact', icon: 'connect_without_contact', badgeIcon: 'o_connect_without_contact', badgeName: 'Collaborator Badge', xp: 50 },
+                ];
+
+                const books = [
+                    { title: 'AI எனும் நான்', shortDescription: 'The autobiography of AI, from its birth to its future.', longDescription: 'This book offers a unique first-person narrative from the perspective of Artificial Intelligence itself. It delves into the philosophical questions of its existence, explores its various forms—the Analyst, the Artist, the Commander—and contemplates its future relationship with humanity.', icon: 'fas fa-robot', color: '#4A90E2', buyUrl: '#' },
+                    { title: 'ஆட்டம் ஆரம்பம்', shortDescription: 'Using gamification to achieve success in life.', longDescription: 'This book is a practical playbook that transforms life\'s challenges into an engaging game. It explores how the principles of game design—points, badges, and quests—can be applied to education, work, and personal development to boost motivation and achieve success.', icon: 'fas fa-gamepad', color: '#F5A623', buyUrl: '#' },
+                    { title: 'காலை உணவு சொல்லும் கதைகள்', shortDescription: 'Finding psychological lessons on our breakfast plates.', longDescription: 'A delightful exploration of the profound psychological lessons hidden in our everyday breakfast dishes. From the ego of a puffy poori to the resilience of a dosa, this book reveals how simple foods tell deep stories about our mind, character, and relationships.', icon: 'fas fa-utensils', color: '#50E3C2', buyUrl: '#' },
+                    { title: 'ஏலே, கோலம் போடுலே!', shortDescription: 'A guide to the UN SDGs for a better future.', longDescription: 'Using the simple, beautiful act of drawing a kolam as a metaphor, this book serves as an accessible guide to the 17 UN Sustainable Development Goals. It explains how we can collectively address global challenges and "draw" a better, more sustainable future for our planet.', icon: 'fas fa-globe-asia', color: '#BD10E0', buyUrl: '#' }
+                ];
+                
+                const songs = [
+                    { title: 'அகண்ட மனம்', shortDescription: 'A 10th anniversary song for my wife.', longDescription: 'This song, "Aganda Manam" (The Boundless Heart), is a lyrical journey attempting to capture the immense love and admiration for a partner, speaking of a love so profound that the entire universe watches in awe.', icon: 'favorite', color: '#E91E63', url: '#', lyrics: `கண்ணிரண்டு காண்பதற்கு\nபன்னிரண்டு மாதங்களும்\nஉன்னுடனே நானிருப்பேன்\nஉன் உதட்டுச் சிரிப்புக்கு...\n\nதிசை எட்டு காத்திருக்கு\nஉன் வரவைப் பார்ப்பதற்கு.\nபூக்களெல்லாம் பேசியிருக்கு\nநம்மை விட அழகி இப்பெண்தான் போலிருக்கு.\n\nவின் உலகின் தேவதைகள் மண் உலகம் வந்திருக்கு\nஉன் கருணை காண்பதற்கு.\nமேகமெல்லாம் கூடிருக்கு, கிசுகிசுத்து எதிர்பார்த்திருக்கு\nஉன் புன்னகை மழைச் சத்தத்திற்கு.\n\nஅமைதியான ஓடம் அது ஆர்ப்பரிக்கத் தொடங்கிருக்கு\nஉன் மவுனத்தின் வலிமை கண்டு\nமலை ராணிகளும் வியந்திருக்கு\nதம் பசுமையை வெல்லும் உன் ஜொலிப்பிற்கு.\n\nஆழ் கடல் கூட வியந்திருக்கு, சிறிது பயம் கூடக் கொண்டிருக்கு\nஉன் கோபத்தின் ஆழம் கண்டு.\nநீர்வீழ்ச்சிகளும் ஸ்தம்பித்துருக்கு, மவுன மொழி பேசியிருக்கு\nபதில் தெரியாத உன் வினவல்களுக்கு.\n\nபறவைகள் எல்லாம் நின்றிருக்கு\nஉன் பேச்சின் காற்றில் பறப்பதற்கு.\nஅண்டமது வியந்திருக்கு, பொறாமைதான் கொண்டிருக்கு\nஅகண்ட உந்தன் மனதைக் கண்டு.` },
+                    { title: 'நட்பு கீதம்', shortDescription: 'A heartfelt anthem for friendship.', longDescription: 'Presenting "Natpu Geetham", a heartfelt Tamil anthem celebrating the unbreakable bonds of friendship. A song that feels like a warm hug from your closest friend.', icon: 'people', color: '#2196F3', url: '#', lyrics: `நண்பன் ஒருவன் இருந்தால் போதும்\nநாட்கள் என்றும் இனிதாய் போகும்\nதுன்பம் என்று வந்தால் கூட\nதுச்சமாய் மதிக்கும் எண்ணம் வரும்\n\nகாசு பணம் கேட்காது\nகாதல் போல காயப்படுத்தாது\nதகுதி தரம் பார்க்காது\nதனித்து நம்மை விட்டுச் செல்லாது\n\nதாயின் அன்பும் தந்தையின் அறிவும்\nசேர்ந்தே காட்டும் ஓர் உருவம்\nசோர்வில்லாமல் நீயும் நானும்\nபேசித் தீர்க்கும் நூறு யுகம்\n\nவானம் பார்த்த பூமி போல\nநட்பை தேடும் ஜீவன் நாமும்\nசோகம் தீர்க்கும் மருந்து போல\nதோழன் தோளில் சாயும் பாரம்\n\nசிரித்து மகிழும் வேளைதோறும்\nசேர்ந்து நிற்கும் சொந்தம் ஆகும்\nஅழுது விழும் நாட்கள் கூட\nஅருகில் இருந்து தாங்கிக் கொள்ளும்\n\nஎதிலும் காணா இன்பம்தன்னை\nநட்பில் காண்பீர் நீரே பாரும்\nநட்பு என்னும் நேசம் போதும்...\nஎன்றும்... போதும்...` },
+                    { title: 'என் வாழ்வின் சாராம்சம்', shortDescription: 'A profound love song, "My Life\'s Essence".', longDescription: 'A profound Tamil love song from a husband to his wife, dedicated to the one who is the essence of his life. Every husband\'s unspoken words compiled into a song.', icon: 'spa', color: '#4CAF50', url: '#', lyrics: `(Lyrics for this song will be updated soon!)` },
+                    { title: 'அன்னை கீதம்', shortDescription: "An emotional tribute to a mother's selfless love.", longDescription: '"I must live every day, carrying your memory with me." This song is a deeply personal tribute to the purest form of love known to humanity—a mother\'s selfless love. It\'s a lullaby not for a child to sleep, but for a child to remember.', icon: 'family_restroom', color: '#FF9800', url: '#', lyrics: `(Lyrics for this song will be updated soon!)` }
+                ];
+
+                const socials = [
+                    { label: 'Email', icon: 'email', href: 'mailto:hariij@gmail.com', color: 'red-5' },
+                    { label: 'LinkedIn', icon: 'fab fa-linkedin-in', href: 'https://www.linkedin.com/in/haripravin', color: 'light-blue-7' },
+                    { label: 'Instagram', icon: 'fab fa-instagram', href: 'https://www.instagram.com/hariij', color: 'purple-5' },
+                    { label: 'YouTube', icon: 'fab fa-youtube', href: 'https://www.youtube.com/@hari-pravin', color: 'red-7' },
+                    { label: 'Facebook', icon: 'fab fa-facebook-f', href: 'https://www.facebook.com/hariij', color: 'indigo-7' }
+                ];
+
+                const scrollTo = (elementId) => {
+                    const el = document.getElementById(elementId);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    state.drawer = false;
+                };
+
+                const updateScrollProgress = () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    state.scrollProgress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+                };
+                
+                const openBookDialog = (book) => {
+                    state.selectedBook = book;
+                    state.bookDialog = true;
+                };
+
+                const openSongDialog = (song) => {
+                    state.selectedSong = song;
+                    state.songDialog = true;
+                };
+                
+                const saveGameState = () => {
+                    localStorage.setItem('hariPravinGameState', JSON.stringify(state.gameState));
+                };
+
+                const loadGameState = () => {
+                    const savedState = localStorage.getItem('hariPravinGameState');
+                    if (savedState) {
+                        state.gameState = JSON.parse(savedState);
+                    }
+                };
+
+                 const triggerBadgeEffect = (target) => {
+                    switch (target) {
+                        case 'about': confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } }); break;
+                        case 'books': confetti({ particleCount: 100, angle: 60, spread: 55, origin: { x: 0 } }); confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 } }); break;
+                        case 'music': var end = Date.now() + (2 * 1000); var colors = ['#FFD700', '#FF6347', '#8A2BE2']; (function frame() { confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: colors }); confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: colors }); if (Date.now() < end) { requestAnimationFrame(frame); } }()); break;
+                        case 'profession': confetti({ particleCount: 150, spread: 180, ticks: 100, origin: { y: 0.5, x: 0.5 }, shapes: ['star'], scalar: 1.2 }); break;
+                        case 'contact': var count = 200; var defaults = { origin: { y: 0.7 } }; function fire(particleRatio, opts) { confetti(Object.assign({}, defaults, opts, { particleCount: Math.floor(count * particleRatio) })); } fire(0.25, { spread: 26, startVelocity: 55 }); fire(0.2, { spread: 60 }); fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 }); fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 }); fire(0.1, { spread: 120, startVelocity: 45 }); break;
+                    }
+                };
+                
+                const showBadgeNotification = (section) => {
+                     $q.notify({
+                        html: true,
+                        message: `
+                            <div class="row items-center no-wrap">
+                                <i class="material-icons-outlined q-mr-md" style="font-size: 2.5rem; color: var(--accent-color);">${section.badgeIcon}</i>
+                                <div>
+                                    <div class="text-weight-bold" style="color: var(--accent-color);">Badge Unlocked!</div>
+                                    <div>${section.badgeName} (+${section.xp} XP)</div>
+                                </div>
+                            </div>`,
+                        color: 'dark',
+                        position: 'bottom-left',
+                        timeout: 4000,
+                        classes: 'playful-card',
+                        style: 'border: 2px solid var(--accent-color); background-color: rgba(44, 62, 80, 0.9);'
+                    });
+                };
+                
+                const earnBadge = (sectionId) => {
+                    const section = menuList.find(item => item.target === sectionId);
+                    if (section && !state.gameState.earnedBadges.includes(section.target)) {
+                        state.gameState.earnedBadges.push(section.target);
+                        state.gameState.totalXp += section.xp;
+                        saveGameState();
+                        showBadgeNotification(section);
+                        triggerBadgeEffect(section.target);
+                    }
+                };
+
+                const earnedBadgesList = computed(() => {
+                    return menuList.filter(item => state.gameState.earnedBadges.includes(item.target));
+                });
+
+                onMounted(() => {
+                    loadGameState();
+                    observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('is-visible');
+                                    earnBadge(entry.target.id);
+                                }
+                            });
+                        },
+                        { threshold: 0.5 }
+                    );
+                    const elements = document.querySelectorAll('.scroll-animate');
+                    elements.forEach(el => observer.observe(el));
+                    window.addEventListener('scroll', updateScrollProgress);
+                    updateScrollProgress();
+                });
+
+                onBeforeUnmount(() => {
+                    if (observer) {
+                        const elements = document.querySelectorAll('.scroll-animate');
+                        elements.forEach(el => observer.unobserve(el));
+                    }
+                    window.removeEventListener('scroll', updateScrollProgress);
+                });
+
+                return {
+                    ...toRefs(state),
+                    menuList,
+                    books,
+                    songs,
+                    socials,
+                    scrollTo,
+                    openBookDialog,
+                    openSongDialog,
+                    earnedBadgesList
+                };
+            }
+        });
+        
+        app.use(Quasar, {
+            config: {},
+            plugins: { Notify: Quasar.Notify }
+        })
+        app.mount('#q-app');
+    </script>
+</body>
+</html>
