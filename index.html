@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="gei4b4RoQQUarJotTgmXNHvKhy-RGjKicCKiTsnmJmM" />
-    <title>MJG Hari Pravin | Author, Poet, Tech Consultant</title>
+    <title>M J G Hari Pravin | Author, Poet, Tech Consultant</title>
     
     <!-- Quasar v2 and Vue 3 CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined" rel="stylesheet" type="text/css">
@@ -22,6 +22,8 @@
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>">
+    
+    <script data-goatcounter="https://haripravin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <style>
         :root {
             --primary-color: #8A2BE2; /* BlueViolet */
@@ -140,6 +142,13 @@
                                 <div class="nav-main-text">My Work</div>
                                 <div class="nav-sub-text">Level 4</div>
                                 <div class="nav-sub-text-ta font-tamil">(பணி)</div>
+                            </div>
+                        </q-tab>
+                        <q-tab name="labs" @click="scrollTo('labs')">
+                            <div class="column items-center no-wrap q-py-xs">
+                                <div class="nav-main-text">Labs</div>
+                                <div class="nav-sub-text">Level 5</div>
+                                <div class="nav-sub-text-ta font-tamil">(ஆய்வகம்)</div>
                             </div>
                         </q-tab>
                         <q-tab name="contact" @click="scrollTo('contact')">
@@ -278,6 +287,40 @@
                             </div>
                         </div>
                     </section>
+
+                    <section id="labs" class="q-py-xl q-px-md scroll-animate">
+                        <div class="q-mx-auto" style="max-width: 1000px;">
+                            <div class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto;">
+                                <div class="level-badge">LEVEL 5</div>
+                                <h2 class="text-h4 text-weight-bold gradient-text">Experimental Labs <br><span class="font-tamil text-h6 text-grey-7">(முயற்சிகளும் சோதனைகளும்)</span></h2>
+                                <p class="q-mt-md text-grey-7">Where technology meets creativity. These are live interactive experiments hosted on my digital ecosystem.</p>
+                            </div>
+                            <div class="row q-col-gutter-lg justify-center">
+                                <div class="col-12 col-md-6">
+                                    <q-card class="playful-card full-height" flat style="border: 2px solid #8A2BE2;">
+                                        <q-card-section>
+                                            <div class="text-h6 text-weight-bold color-primary">⚛️ Magic Reactor – Interactive Concept Learning Experiment</div>
+                                            <p class="q-mt-sm text-grey-8">Magic Reactor is a bilingual interactive visual explainer describing India’s Prototype Fast Breeder Reactor (PFBR) achievement at Kalpakkam and its role in the country’s long-term nuclear energy program.</p>
+                                            <p class="q-mt-sm text-grey-8">The project explains complex nuclear engineering concepts such as breeder reactors, thorium fuel cycles, and multi-stage nuclear strategy using cartoon-style visual storytelling and gamified educational presentation accessible to non-technical audiences.
+                                            <p class="q-mt-sm text-grey-8">It demonstrates how AI-assisted visual content workflows can make large-scale scientific and national engineering achievements understandable to wider public audiences.</p>
+                                            <q-btn flat color="primary" label="Enter Lab" href="/magic-reactor" target="_blank" icon-right="launch" />
+                                        </q-card-section>
+                                    </q-card>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <q-card class="playful-card full-height" flat style="border: 2px solid #FF6347;">
+                                        <q-card-section>
+                                            <div class="text-h6 text-weight-bold" style="color: #FF6347;">📐 Skill Shapes – Career Shape Models for the AI Era</div>
+                                            <p class="q-mt-sm text-grey-8">Skill Shapes is an interactive visual guide explaining career “shape” models such as I-shaped, T-shaped, Pi-shaped, Comb-shaped, and other emerging capability structures required in the AI era.</p>
+                                            <p class="q-mt-sm text-grey-8">The project presents shape-theory frameworks through a gamified bilingual (English–Tamil) interactive format designed to make career strategy concepts accessible across age groups and learning backgrounds.</p>
+                                            <p class="q-mt-sm text-grey-8">It explores how visual storytelling and AI-assisted content creation can reshape how people understand skills, adaptability, and cross-disciplinary capability development in the future of work.</p>
+                                            <q-btn flat color="secondary" label="Enter Lab" href="/skill-shapes" target="_blank" icon-right="launch" />
+                                        </q-card-section>
+                                    </q-card>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     
                     <!-- Contact Section -->
                     <section id="contact" class="q-py-xl q-px-md scroll-animate">
@@ -302,6 +345,14 @@
                     </q-page-sticky>
 
                 </q-page>
+                <footer class="q-pa-xl text-center bg-white" style="border-top: 1px solid #eee;">
+                    <div class="row justify-center q-gutter-md q-mb-md">
+                        <a href="TermsAndConditions.html" target="_blank" class="text-grey-7">Terms</a>
+                        <a href="RefundAndCancellation.html" target="_blank" class="text-grey-7">Refunds</a>
+                        <a href="ShippingAndDelivery.html" target="_blank" class="text-grey-7">Shipping</a>
+                    </div>
+                    <div class="text-grey-6 font-tamil">© 2026 M J G Hari Pravin. All Rights Reserved.</div>
+                </footer>
             </q-page-container>
             
             <!-- Book Details Dialog -->
@@ -364,6 +415,13 @@
                         </q-list>
                     </q-card-section>
                     <q-card-actions align="right">
+                        <q-btn 
+                            flat 
+                            label="Reset Adventure" 
+                            color="negative" 
+                            icon="refresh" 
+                            @click="confirmReset" 
+                        />
                         <q-btn flat label="Close" color="primary" v-close-popup />
                     </q-card-actions>
                 </q-card>
@@ -406,6 +464,7 @@
                     { label: 'My Books', target: 'books', icon: 'auto_stories', badgeIcon: 'o_auto_stories', badgeName: 'Author Badge', xp: 100 },
                     { label: 'My Songs', target: 'music', icon: 'music_note', badgeIcon: 'o_music_note', badgeName: 'Lyricist Badge', xp: 100 },
                     { label: 'My Work', target: 'profession', icon: 'construction', badgeIcon: 'o_construction', badgeName: 'Techie Badge', xp: 100 },
+                    { label: 'Experimental Labs', target: 'labs', icon: 'science', badgeIcon: 'o_science', badgeName: 'Researcher Badge', xp: 150 },
                     { label: 'Connect', target: 'contact', icon: 'connect_without_contact', badgeIcon: 'o_connect_without_contact', badgeName: 'Collaborator Badge', xp: 50 },
                 ];
 
@@ -471,7 +530,8 @@
                         case 'about': confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } }); break;
                         case 'books': confetti({ particleCount: 100, angle: 60, spread: 55, origin: { x: 0 } }); confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 } }); break;
                         case 'music': var end = Date.now() + (2 * 1000); var colors = ['#FFD700', '#FF6347', '#8A2BE2']; (function frame() { confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: colors }); confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: colors }); if (Date.now() < end) { requestAnimationFrame(frame); } }()); break;
-                        case 'profession': confetti({ particleCount: 150, spread: 180, ticks: 100, origin: { y: 0.5, x: 0.5 }, shapes: ['star'], scalar: 1.2 }); break;
+                        case 'profession': confetti({ particleCount: 150, spread: 180, ticks: 100, origin: { y: 0.5, x: 0.5 }, shapes: ['star'], scalar: 1.2 });
+                        case 'labs': confetti({ particleCount: 200, spread: 100, origin: { y: 0.7 }, colors: ['#8A2BE2', '#FF6347', '#50E3C2'] }); break;
                         case 'contact': var count = 200; var defaults = { origin: { y: 0.7 } }; function fire(particleRatio, opts) { confetti(Object.assign({}, defaults, opts, { particleCount: Math.floor(count * particleRatio) })); } fire(0.25, { spread: 26, startVelocity: 55 }); fire(0.2, { spread: 60 }); fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 }); fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 }); fire(0.1, { spread: 120, startVelocity: 45 }); break;
                     }
                 };
@@ -510,6 +570,32 @@
                     return menuList.filter(item => state.gameState.earnedBadges.includes(item.target));
                 });
 
+                const resetGameState = () => {
+                    // Completely removes the saved data from the browser
+                    localStorage.removeItem('hariPravinGameState');
+                    
+                    // Reset local state variables
+                    state.gameState.totalXp = 0;
+                    state.gameState.earnedBadges = [];
+                    
+                    // Close dialog and refresh to reset the intersection observers
+                    state.badgeDialog = false;
+                    window.location.reload(); 
+                };
+
+                const confirmReset = () => {
+                    $q.dialog({
+                        title: 'Reset Progress?',
+                        message: 'This will clear all your earned XP and badges. Are you sure?',
+                        cancel: true,
+                        persistent: true,
+                        ok: { label: 'Yes, Reset', color: 'negative', flat: true },
+                        cancel: { label: 'Keep Them', color: 'primary', flat: true }
+                    }).onOk(() => {
+                        resetGameState();
+                    });
+                };
+
                 onMounted(() => {
                     loadGameState();
                     observer = new IntersectionObserver(
@@ -546,14 +632,16 @@
                     scrollTo,
                     openBookDialog,
                     openSongDialog,
-                    earnedBadgesList
+                    earnedBadgesList,
+                    confirmReset,
+                    resetGameState
                 };
             }
         });
         
         app.use(Quasar, {
             config: {},
-            plugins: { Notify: Quasar.Notify }
+            plugins: { Notify: Quasar.Notify, Dialog: Quasar.Dialog }
         })
         app.mount('#q-app');
     </script>
