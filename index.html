@@ -1,649 +1,721 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="journey">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="gei4b4RoQQUarJotTgmXNHvKhy-RGjKicCKiTsnmJmM" />
-    <title>M J G Hari Pravin | Author, Poet, Tech Consultant</title>
-    
-    <!-- Quasar v2 and Vue 3 CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/quasar@2.16.4/dist/quasar.prod.css" rel="stylesheet" type="text/css">
-    
-    <!-- Font Awesome for social icons -->
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" rel="stylesheet" type="text/css">
-    <!-- Animate.css for scroll animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-    <!-- Google Fonts: Playful and Multilingual -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Baloo+Thambi+2:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>">
-    
-    <script data-goatcounter="https://haripravin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <style>
-        :root {
-            --primary-color: #8A2BE2; /* BlueViolet */
-            --secondary-color: #FF6347; /* Tomato */
-            --accent-color: #FFD700; /* Gold */
-            --bg-light: #F8F7F4;
-            --text-dark: #2c3e50;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            color: var(--text-dark);
-            /* Animated gradient background */
-            background: linear-gradient(-45deg, #f8f7f4, #fde2e4, #e2eafc, #d2f6c5);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .font-tamil {
-            font-family: 'Baloo Thambi 2', cursive;
-        }
-        h1, h2, h3, h4, h5, h6, .q-tab__label, .nav-main-text {
-            font-family: 'Fredoka One', cursive;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-        .playful-card {
-            border-radius: 20px;
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-            border: 2px solid transparent;
-            cursor: pointer;
-        }
-        .playful-card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            border-color: var(--accent-color);
-        }
-        .scroll-animate {
-            opacity: 0;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            transform: translateY(30px);
-        }
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .level-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background-color: var(--accent-color);
-            color: var(--text-dark);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        .lyrics-text {
-            white-space: pre-wrap;
-            font-family: 'Baloo Thambi 2', cursive;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        .nav-main-text { line-height: 1.2; font-size: 1rem; font-weight: bold; }
-        .nav-sub-text { font-size: 0.7rem; opacity: 0.7; line-height: 1; font-family: 'Nunito', sans-serif; }
-        .nav-sub-text-ta { font-size: 0.75rem; opacity: 0.8; line-height: 1.1; }
-        .badge-chest-card { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hari Pravin · technologist, author, lyricist</title>
+<meta name="description" content="Hari Pravin, Chennai. Technologist by profession; Tamil author, lyricist and creator by passion. His series #TiffinPsychology and Paavam AI, his songs, his book AI எனும் நான், his work and his essays, with an owl to show you around.">
+<link rel="canonical" href="https://hariprav.in/">
+<meta name="google-site-verification" content="gei4b4RoQQUarJotTgmXNHvKhy-RGjKicCKiTsnmJmM">
+<meta name="theme-color" content="#F4B41A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hari Pravin">
+<meta property="og:url" content="https://hariprav.in/">
+<meta property="og:title" content="Hari Pravin · technologist, author, lyricist">
+<meta property="og:description" content="Hari Pravin, Chennai. Technologist by profession; Tamil author, lyricist and creator by passion. His series #TiffinPsychology and Paavam AI, his songs, his book AI எனும் நான், his work and his essays, with an owl to show you around.">
+<meta property="og:image" content="https://hariprav.in/assets/portrait.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hariij">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Hari Pravin", "alternateName": "M J G Hari Pravin", "url": "https://hariprav.in/", "image": "https://hariprav.in/assets/portrait.jpg", "jobTitle": "Technology consultant, author and lyricist", "worksFor": {"@type": "Organization", "name": "Krazy Buddy Technologies"}, "address": {"@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN"}, "sameAs": ["https://music.apple.com/us/artist/hari-pravin/1843956639", "https://open.spotify.com/artist/7fn0f6uITJdzmaFfD4DqZ6", "https://www.facebook.com/haripravinofficial", "https://www.instagram.com/haripravinofficial", "https://www.linkedin.com/in/haripravin", "https://www.threads.net/@haripravinofficial", "https://www.youtube.com/@HariPravinOfficial", "https://x.com/hariij", "https://haripravin.medium.com/"]}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23F4B41A' stroke='%231A1512' stroke-width='4'/><circle cx='35' cy='46' r='15' fill='white' stroke='%231A1512' stroke-width='5'/><circle cx='65' cy='46' r='15' fill='white' stroke='%231A1512' stroke-width='5'/><circle cx='35' cy='46' r='6' fill='%231A1512'/><circle cx='65' cy='46' r='6' fill='%231A1512'/><path d='M50 56l-7 8q7 8 14 0z' fill='%23D63A2F' stroke='%231A1512' stroke-width='3'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Baloo+Thambi+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
 </head>
+<body class="proof journey blend nest">
+<div class="sky" aria-hidden="true"><div class="rays"></div></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="labels" aria-hidden="true"></div>
+<header class="ptop">
+  <a class="pbrand" href="#hello" style="font-size:clamp(18px,1.9vw,26px)"><span class="ink">Hari <em>Pravin</em></span></a>
+  <nav class="plainnav" aria-label="Sections"><a href="#w1">#டிபன்சைக்காலஜி</a><a href="#w2">பாவம் AI</a><a href="#w3">Songs</a><a href="#w4">Books</a><a href="#w5">Work</a><a href="#w6">Experiments</a><a href="#w7">Writing</a><a href="#p2">Say hello</a></nav>
+  <div class="ptop-r"><button class="bpill sndb" id="sndb" type="button" aria-pressed="true" aria-label="Sound effects" title="Sound is on"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1A1512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18.500v-13L7.500 9.500z" fill="#F4B41A"/><path class="s-on" d="M15.500 9.200a4.200 4.200 0 0 1 0 5.600M18 6.800a7.800 7.800 0 0 1 0 10.400"/><path class="s-off" d="M15.500 9.500l5 5M20.500 9.500l-5 5"/></svg></button><button class="bpill" id="bpill" aria-label="The owl's nest: your feathers, gifts and friendship"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.500 3.500C12 3.500 6.200 8.300 5 16l-2.200 4.700L7.500 19C15.400 17.800 20.500 11.800 20.500 3.500z" fill="#F4B41A" stroke="#1A1512" stroke-width="1.700" stroke-linejoin="round"/></svg><span class="nlabel">Nest</span><b data-trail="count">0</b>/8<span class="pts"><b id="nrank">Stranger</b></span></button></div>
+</header>
+<nav id="prog" aria-label="Where you are"><i data-n="#டிபன்சைக்காலஜி"></i><i data-n="பாவம் AI"></i><i data-n="Songs"></i><i data-n="Books"></i><i data-n="Work"></i><i data-n="Experiments"></i><i data-n="Writing"></i><i data-n="Say hello"></i></nav>
+<div id="boot" aria-hidden="true"><div class="in"><b>ஆட்டம் ஆரம்பம்</b><span class="bar"><i></i></span><span class="pixel">Loading worlds</span></div></div>
 
-<body>
-    <div id="q-app">
-        <q-layout view="hHh lpR fFf" class="bg-transparent">
+<!-- ============ HUD ============ -->
+<header class="hud">
+  <a class="hud-brand" href="#top"><span data-owl></span>HARI PRAVIN</a>
+  <nav class="hud-worlds" aria-label="Worlds">
+    <a href="#w1" data-w="w1"><b>1</b><span>Tiffin</span></a>
+    <a href="#w2" data-w="w2"><b>2</b><span>Paavam</span></a>
+    <a href="#w3" data-w="w3"><b>3</b><span>Jukebox</span></a>
+    <a href="#w4" data-w="w4"><b>4</b><span>Library</span></a>
+    <a href="#w5" data-w="w5"><b>5</b><span>Work</span></a>
+    <a href="#w6" data-w="w6"><b>6</b><span>Labs</span></a>
+    <a href="#w7" data-w="w7"><b>7</b><span>Scrolls</span></a>
+    <a href="#p2" data-w="p2"><b>★</b><span>Player 2</span></a>
+  </nav>
+  <div class="hud-right">
+    <button class="hud-xp" id="openLog" aria-label="Open quest log">
+      <span class="pixel">LV <b id="lv">1</b></span>
+      <span class="xpbar"><i id="xpfill"></i></span>
+      <span class="pixel" id="xptxt">0 XP</span>
+    </button>
+    <button class="hud-btn snd" id="snd" aria-pressed="false" aria-label="Sound">
+      <svg class="on-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 8.5a5 5 0 010 7M19.5 6a8.5 8.5 0 010 12"/></svg>
+      <svg class="off-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 9.5l5 5M22 9.5l-5 5"/></svg>
+    </button>
+    <button class="hud-btn go" id="speedrun">Speedrun</button>
+  </div>
+</header>
 
-            <!-- Header with Gamified Progress Bar -->
-            <q-header elevated class="bg-white text-dark shadow-2">
-                <q-toolbar>
-                    <q-toolbar-title class="text-weight-bold" style="font-size: 1.5rem; color: var(--primary-color);">
-                        MJG Hari Pravin
-                    </q-toolbar-title>
-                    <q-tabs class="gt-sm" shrink stretch indicator-color="secondary">
-                        <q-tab name="about" @click="scrollTo('about')">
-                            <div class="column items-center no-wrap q-py-xs">
-                                <div class="nav-main-text">About Me</div>
-                                <div class="nav-sub-text">Level 1</div>
-                                <div class="nav-sub-text-ta font-tamil">(அறிமுகம்)</div>
-                            </div>
-                        </q-tab>
-                        <q-tab name="books" @click="scrollTo('books')">
-                             <div class="column items-center no-wrap q-py-xs">
-                                <div class="nav-main-text">My Books</div>
-                                <div class="nav-sub-text">Level 2</div>
-                                <div class="nav-sub-text-ta font-tamil">(புத்தகங்கள்)</div>
-                            </div>
-                        </q-tab>
-                         <q-tab name="music" @click="scrollTo('music')">
-                             <div class="column items-center no-wrap q-py-xs">
-                                <div class="nav-main-text">My Songs</div>
-                                <div class="nav-sub-text">Level 3</div>
-                                <div class="nav-sub-text-ta font-tamil">(பாடல்கள்)</div>
-                            </div>
-                        </q-tab>
-                        <q-tab name="profession" @click="scrollTo('profession')">
-                             <div class="column items-center no-wrap q-py-xs">
-                                <div class="nav-main-text">My Work</div>
-                                <div class="nav-sub-text">Level 4</div>
-                                <div class="nav-sub-text-ta font-tamil">(பணி)</div>
-                            </div>
-                        </q-tab>
-                        <q-tab name="labs" @click="scrollTo('labs')">
-                            <div class="column items-center no-wrap q-py-xs">
-                                <div class="nav-main-text">Labs</div>
-                                <div class="nav-sub-text">Level 5</div>
-                                <div class="nav-sub-text-ta font-tamil">(ஆய்வகம்)</div>
-                            </div>
-                        </q-tab>
-                        <q-tab name="contact" @click="scrollTo('contact')">
-                             <div class="column items-center no-wrap q-py-xs">
-                                <div class="nav-main-text">Connect</div>
-                                <div class="nav-sub-text">Final Level</div>
-                                <div class="nav-sub-text-ta font-tamil">(தொடர்புக்கு)</div>
-                            </div>
-                        </q-tab>
-                    </q-tabs>
-                                        
-                    <q-btn flat dense round @click="drawer = !drawer" aria-label="Menu" icon="menu" class="lt-md" color="primary"></q-btn>
-                </q-toolbar>
-                <q-linear-progress :value="scrollProgress" color="accent" animation-speed="300" />
-            </q-header>
+<main>
 
-            <!-- Mobile Drawer -->
-            <q-drawer v-model="drawer" :width="250" :breakpoint="500" overlay elevated content-class="bg-light text-dark">
-                <q-scroll-area class="fit">
-                    <q-list>
-                        <template v-for="(menuItem, index) in menuList">
-                            <q-item clickable v-ripple @click="scrollTo(menuItem.target)">
-                                <q-item-section avatar>
-                                    <q-icon :name="menuItem.icon" color="primary"></q-icon>
-                                </q-item-section>
-                                <q-item-section class="text-weight-bold">{{ menuItem.label }}</q-item-section>
-                            </q-item>
-                        </template>
-                         <q-item clickable v-ripple @click="badgeDialog = true">
-                                <q-item-section avatar>
-                                    <q-icon name="o_military_tech" color="primary"></q-icon>
-                                </q-item-section>
-                                <q-item-section class="text-weight-bold">Badge Chest ({{ gameState.totalXp }} XP)</q-item-section>
-                            </q-item>
-                    </q-list>
-                </q-scroll-area>
-            </q-drawer>
+<section class="stop opening" id="hello" data-stop>
+  <div class="hello">
+    <span class="p1 pixel"><i></i>Chennai · building since 2000</span>
+    <h1><span class="ink">Hari</span><span class="ink"><em>Pravin</em></span></h1>
+    <p class="say"><b>Technologist by profession. Author, lyricist and creator by passion.</b> I make hard ideas easy to love, in Tamil and in code.</p>
+    <div class="ocards">
+      <figure class="me card"><img src="assets/portrait.jpg" alt="Hari Pravin"><figcaption><b data-fact="years">26</b> years in tech</figcaption></figure>
+      <div class="hook card">
+        <span class="pixel">Help the owl</span>
+        <h3>The owl has lost its eight feathers.</h3>
+        <p>Every island has a feather to win and a gift to find. Answer the owl to win a feather back, try things to find gifts for its nest, and see how good a friend you become.</p>
+        <div class="fslots"></div>
+        <a class="btn red sm" id="hookBtn" href="#w1">Start the trail</a>
+      </div>
+    </div>
+    <div class="ostats"><span><b data-fact="subs">8.48K</b> subscribers</span><span><b data-fact="videos">63</b> videos</span><span><b>2</b> series running</span><span><b>1</b> book out, 3 on the way</span></div>
+  </div>
+</section>
 
-            <!-- Page Content -->
-            <q-page-container>
-                <q-page class="q-pa-md">
-                    <!-- Hero Section -->
-                    <section id="home" class="row items-center justify-center text-center" style="min-height: 90vh;">
-                        <div>
-                            <h1 class="text-h2 text-weight-bolder q-mb-md gradient-text">MJG Hari Pravin</h1>
-                            <p class="text-h5 text-grey-8">Author • Poet • Tech Consultant</p>
-                            <p class="text-h6 text-grey-7 font-tamil">எழுத்தாளர் • கவிஞர் • தொழில்நுட்ப ஆலோசகர்</p>
-                            <div class="q-mt-lg text-grey-7">Scroll to begin the adventure!</div>
-                             <q-icon name="fas fa-chevron-down" size="sm" class="q-mt-sm animate__animated animate__bounce animate__infinite"></q-icon>
-                        </div>
-                    </section>
-                    
-                    <!-- About Section -->
-                    <section id="about" class="q-py-xl q-px-md scroll-animate">
-                        <div class="q-mx-auto" style="max-width: 900px;">
-                             <div class="text-center">
-                                 <div class="level-badge">LEVEL 1</div>
-                                <h2 class="text-h4 text-weight-bold q-mb-md gradient-text">The Adventure Begins <br><span class="font-tamil text-h6 text-grey-7">(ஒரு அறிமுகம்)</span></h2>
-                             </div>
-                            <div class="row items-center q-col-gutter-xl q-mt-lg">
-                                <div class="col-12 col-md-4">
-                                    <q-img src="/assets/images/SoloSmall_1.jpg" alt="MJG Hari Pravin" class="rounded-borders" style="border-radius: 50%; border: 5px solid var(--secondary-color);"></q-img>
-                                </div>
-                                <div class="col-12 col-md-8">
-                                    <p class="text-body1 text-grey-8 q-mb-md">My quest has always been to understand the world around us, and in turn, ourselves. I see myself as an agnostic in matters of faith and an ambivert who finds fulfillment both in quiet contemplation and in engaging with others. Humility, adaptability, and open-mindedness are the guiding principles of my journey.</p>
-                                    <p class="text-body1 text-grey-8">My writing is an extension of this search, exploring life, its mysterious workings, and its purpose. From using gamification to achieve success to finding life lessons on a breakfast plate, I strive to uncover the extraordinary within the ordinary, making complex ideas accessible and engaging.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+<!-- ============ START SCREEN ============ -->
+<section id="top" class="hero dots">
+  <div class="hero-burst" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="p1 pixel"><i></i>Player 1 · Chennai</span>
+        <h1 class="title"><span class="ink t1">Hari</span><span class="ink t2"><em>Pravin</em></span></h1>
+        <p class="tagline"><b>Technologist by profession. Author, lyricist and creator by passion.</b> I make hard ideas easy to love, in Tamil and in code. This site is a game: play it.</p>
+        <div class="cta">
+          <button class="btn red" id="start"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>Start game</button>
+          <button class="btn" id="speedrun2">Speedrun · 1 min</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b data-fact="years">26</b><span class="pixel">years in tech</span></div>
+          <div class="stat"><b data-fact="subs">8.48K</b><span class="pixel">subscribers</span></div>
+          <div class="stat"><b data-fact="videos">63</b><span class="pixel">videos</span></div>
+          <div class="stat"><b>2</b><span class="pixel">series live</span></div>
+          <button class="dice" id="dice" aria-label="Roll the dice for a random pick">
+            <span class="die" id="die"><i></i><i></i><i></i><i></i><i class="p"></i><i></i><i></i><i></i><i></i></span>
+            <span>Roll the dice<small>for a lucky pick</small></span>
+          </button>
+        </div>
+      </div>
 
-                    <!-- Books Section -->
-                    <section id="books" class="q-py-xl q-px-md scroll-animate">
-                        <div class="q-mx-auto" style="max-width: 1200px;">
-                            <div class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto;">
-                                <div class="level-badge">LEVEL 2</div>
-                                <h2 class="text-h4 text-weight-bold gradient-text">Authored Worlds <br><span class="font-tamil text-h6 text-grey-7">(என் புத்தகங்கள்)</span></h2>
-                                <p class="q-mt-md text-grey-7">I enjoy demystifying complex topics through storytelling. My book "AI எனும் நான்" is with the publisher, while the others are soon to be published. Click on a book to learn more!</p>
-                            </div>
-                            <div class="row q-col-gutter-lg justify-center">
-                                <div class="col-12 col-sm-6 col-md-3" v-for="book in books" :key="book.title" @click="openBookDialog(book)">
-                                    <q-card class="playful-card full-height column" :style="{ backgroundColor: book.color }">
-                                        <q-card-section class="text-center q-pa-lg">
-                                            <q-icon :name="book.icon" size="3rem" color="white" class="q-mb-md"></q-icon>
-                                            <div class="text-h6 text-weight-bold font-tamil text-white">{{ book.title }}</div>
-                                            <p class="text-white q-mt-sm opacity-80">{{ book.shortDescription }}</p>
-                                        </q-card-section>
-                                    </q-card>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+      <div class="stage">
+        <div class="disc dots"></div>
+        <div class="sticker-aa" aria-hidden="true"><div class="star">ஆட்டம் ஆரம்பம்!</div></div>
+        <div class="pcard card">
+          <div class="ph"><img src="assets/portrait.jpg" alt="Hari Pravin"><span class="lv pixel">LVL <span data-fact="years">26</span> · since 2000</span></div>
+          <h2>M J G Hari Pravin</h2>
+          <p class="cls">Technologist · Author · Lyricist</p>
+          <p class="roles ta">எழுத்தாளர் · கவிஞர் · தொழில்நுட்ப ஆலோசகர்</p>
+        </div>
+        <div class="perch" data-owl="track" data-perch="hero"></div>
+        <div class="bubble" id="heroSay">Hoo! I keep the score here. Press START.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- Music Section -->
-                    <section id="music" class="q-py-xl q-px-md scroll-animate">
-                         <div class="q-mx-auto" style="max-width: 1000px;">
-                            <div class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto;">
-                                <div class="level-badge">LEVEL 3</div>
-                                <h2 class="text-h4 text-weight-bold gradient-text">Lyrics & Melodies <br><span class="font-tamil text-h6 text-grey-7">(என் பாடல்கள்)</span></h2>
-                                <p class="q-mt-md text-grey-7">I write lyrics from the heart and collaborate with AI tools like Suno and Sora to bring the melodies, vocals, and visuals to life. Click a song to read the lyrics!</p>
-                            </div>
-                            <div class="row q-col-gutter-lg justify-center">
-                                <div class="col-12 col-md-6" v-for="song in songs" :key="song.title">
-                                     <q-card class="playful-card full-height" flat style="background-color: #fff;" @click="openSongDialog(song)">
-                                        <q-item class="q-pa-md">
-                                            <q-item-section avatar>
-                                                 <q-icon :name="song.icon" size="3rem" :style="{ color: song.color }"></q-icon>
-                                            </q-item-section>
-                                            <q-item-section>
-                                                <q-item-label class="text-h6 text-weight-bold font-tamil" :style="{ color: song.color }">{{ song.title }}</q-item-label>
-                                                <q-item-label caption class="text-grey-7">{{ song.shortDescription }}</q-item-label>
-                                            </q-item-section>
-                                             <q-item-section side>
-                                                <q-btn :href="song.url" target="_blank" type="a" round color="primary" icon="fab fa-youtube" @click.stop />
-                                             </q-item-section>
-                                        </q-item>
-                                    </q-card>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                     <!-- Profession Section -->
-                    <section id="profession" class="q-py-xl q-px-md scroll-animate">
-                        <div class="q-mx-auto" style="max-width: 800px;">
-                            <div class="text-center">
-                                <div class="level-badge">LEVEL 4</div>
-                                <h2 class="text-h4 text-weight-bold q-mb-sm gradient-text">My Tech Journey <br><span class="font-tamil text-h6 text-grey-7">(என் தொழில்நுட்ப பயணம்)</span></h2>
-                                <p class="text-h6 text-weight-bold text-grey-7 q-mb-none">Tech Consultant, Product Strategist</p>
-                                <p class="text-h6 text-weight-bold text-grey-7 q-mb-lg">Co-Founder @ Krazy Buddy Technologies</p>
-                                <p class="text-body1 text-grey-8 q-mb-md">With 24+ years of industry experience, I’ve had the privilege of wearing many hats — from developer and solutions architect to product manager and now co-founder & consultant. Across this journey, I’ve partnered with global enterprises like IKEA, Oriflame, Sandvik, and Piab, as well as fast-growing startups, helping them shape and deliver transformative digital solutions.</p>
-                                <p class="text-body1 text-grey-8 q-mb-md">My expertise spans <b>product strategy, system design, and agile product management</b>, with a proven track record of building SaaS platforms, ERP systems, and enterprise-grade web and mobile applications. Beyond strategy, I remain hands-on — from prototyping and UI design to defining technical architecture and guiding teams toward scalable, user-centric outcomes.</p>
-                                <p class="text-body1 text-grey-8 q-mb-md">What excites me most is <b>turning ideas into reality</b> — leveraging emerging technologies like AI, OCR, media streaming, and cloud-native solutions to solve real-world problems. Whether it’s shaping a product roadmap, crafting user stories, or ensuring seamless delivery, my focus remains on creating products that balance technical excellence, business value, and meaningful user experience.</p>
-                                <p class="text-body1 text-grey-8">At the heart of my work lies a simple principle: <b>Technology should empower people, not overwhelm them.</b></p>
-<!--                                 <p class="text-body1 text-grey-8">With over 25+ years in the tech industry, I help companies turn great ideas into impactful realities. I specialize in product strategy, system design, and leading cross-functional teams to build high-quality digital solutions. My goal is to blend technology with agile principles to solve real-world problems and deliver value by creating products that are not only functional but also meaningful and user-centric.</p> -->
-                            </div>
-                        </div>
-                    </section>
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
 
-                    <section id="labs" class="q-py-xl q-px-md scroll-animate">
-                        <div class="q-mx-auto" style="max-width: 1000px;">
-                            <div class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto;">
-                                <div class="level-badge">LEVEL 5</div>
-                                <h2 class="text-h4 text-weight-bold gradient-text">Experimental Labs <br><span class="font-tamil text-h6 text-grey-7">(முயற்சிகளும் சோதனைகளும்)</span></h2>
-                                <p class="q-mt-md text-grey-7">Where technology meets creativity. These are live interactive experiments hosted on my digital ecosystem.</p>
-                            </div>
-                            <div class="row q-col-gutter-lg justify-center">
-                                <div class="col-12 col-md-6">
-                                    <q-card class="playful-card full-height" flat style="border: 2px solid #8A2BE2;">
-                                        <q-card-section>
-                                            <div class="text-h6 text-weight-bold color-primary">⚛️ Magic Reactor – Interactive Concept Learning Experiment</div>
-                                            <p class="q-mt-sm text-grey-8">Magic Reactor is a bilingual interactive visual explainer describing India’s Prototype Fast Breeder Reactor (PFBR) achievement at Kalpakkam and its role in the country’s long-term nuclear energy program.</p>
-                                            <p class="q-mt-sm text-grey-8">The project explains complex nuclear engineering concepts such as breeder reactors, thorium fuel cycles, and multi-stage nuclear strategy using cartoon-style visual storytelling and gamified educational presentation accessible to non-technical audiences.
-                                            <p class="q-mt-sm text-grey-8">It demonstrates how AI-assisted visual content workflows can make large-scale scientific and national engineering achievements understandable to wider public audiences.</p>
-                                            <q-btn flat color="primary" label="Enter Lab" href="/magic-reactor" target="_blank" icon-right="launch" />
-                                        </q-card-section>
-                                    </q-card>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <q-card class="playful-card full-height" flat style="border: 2px solid #FF6347;">
-                                        <q-card-section>
-                                            <div class="text-h6 text-weight-bold" style="color: #FF6347;">📐 Skill Shapes – Career Shape Models for the AI Era</div>
-                                            <p class="q-mt-sm text-grey-8">Skill Shapes is an interactive visual guide explaining career “shape” models such as I-shaped, T-shaped, Pi-shaped, Comb-shaped, and other emerging capability structures required in the AI era.</p>
-                                            <p class="q-mt-sm text-grey-8">The project presents shape-theory frameworks through a gamified bilingual (English–Tamil) interactive format designed to make career strategy concepts accessible across age groups and learning backgrounds.</p>
-                                            <p class="q-mt-sm text-grey-8">It explores how visual storytelling and AI-assisted content creation can reshape how people understand skills, adaptability, and cross-disciplinary capability development in the future of work.</p>
-                                            <q-btn flat color="secondary" label="Enter Lab" href="/skill-shapes" target="_blank" icon-right="launch" />
-                                        </q-card-section>
-                                    </q-card>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Contact Section -->
-                    <section id="contact" class="q-py-xl q-px-md scroll-animate">
-                        <div class="q-mx-auto text-center" style="max-width: 600px;">
-                            <div class="level-badge">FINAL LEVEL</div>
-                            <h2 class="text-h4 text-weight-bold gradient-text">Connect & Collaborate <br><span class="font-tamil text-h6 text-grey-7">(தொடர்புக்கு)</span></h2>
-                             <p class="q-mt-md text-grey-7">I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great. Let's get in touch!</p>
-                            <div class="q-mt-lg row justify-center q-gutter-md">
-                                <q-btn v-for="social in socials" :key="social.label" round size="lg" :color="social.color" text-color="white" :icon="social.icon" :href="social.href" target="_blank" type="a">
-                                    <q-tooltip>{{ social.label }}</q-tooltip>
-                                </q-btn>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Floating Action Button for Badge Chest -->
-                    <q-page-sticky position="bottom-right" :offset="[18, 18]">
-                        <q-btn fab icon="o_military_tech" color="primary" @click="badgeDialog = true">
-                            <q-badge color="secondary" floating>{{ gameState.totalXp }} XP</q-badge>
-                            <q-tooltip>Badge Chest</q-tooltip>
-                        </q-btn>
-                    </q-page-sticky>
-
-                </q-page>
-                <footer class="q-pa-xl text-center bg-white" style="border-top: 1px solid #eee;">
-                    <div class="row justify-center q-gutter-md q-mb-md">
-                        <a href="TermsAndConditions.html" target="_blank" class="text-grey-7">Terms</a>
-                        <a href="RefundAndCancellation.html" target="_blank" class="text-grey-7">Refunds</a>
-                        <a href="ShippingAndDelivery.html" target="_blank" class="text-grey-7">Shipping</a>
-                    </div>
-                    <div class="text-grey-6 font-tamil">© 2026 M J G Hari Pravin. All Rights Reserved.</div>
-                </footer>
-            </q-page-container>
-            
-            <!-- Book Details Dialog -->
-            <q-dialog v-model="bookDialog" v-if="selectedBook">
-                <q-card class="playful-card" style="width: 500px; max-width: 90vw;" :style="{ borderTop: `10px solid ${selectedBook.color}` }">
-                    <q-card-section class="text-center">
-                        <q-icon :name="selectedBook.icon" size="4rem" :style="{ color: selectedBook.color }"></q-icon>
-                        <div class="text-h5 text-weight-bold font-tamil q-mt-md">{{ selectedBook.title }}</div>
-                    </q-card-section>
-                    <q-card-section class="q-pt-none">
-                        <p class="text-body1 text-grey-8">{{ selectedBook.longDescription }}</p>
-                    </q-card-section>
-                    <q-card-actions align="right" class="q-pa-md bg-grey-2">
-                        <q-btn flat label="Close" color="primary" v-close-popup />
-                        <q-btn :href="selectedBook.buyUrl" target="_blank" type="a" unelevated color="primary" icon="shopping_cart" label="Buy Now" class="q-ml-sm" />
-                    </q-card-actions>
-                </q-card>
-            </q-dialog>
-
-             <!-- Song Details Dialog -->
-            <q-dialog v-model="songDialog" v-if="selectedSong">
-                <q-card class="playful-card" style="width: 600px; max-width: 90vw;" :style="{ borderTop: `10px solid ${selectedSong.color}` }">
-                     <q-card-section class="text-center">
-                        <q-icon :name="selectedSong.icon" size="4rem" :style="{ color: selectedSong.color }"></q-icon>
-                        <div class="text-h5 text-weight-bold font-tamil q-mt-md">{{ selectedSong.title }}</div>
-                        <p class="text-grey-7 q-mt-sm">{{ selectedSong.longDescription }}</p>
-                    </q-card-section>
-                    <q-card-section v-if="selectedSong.lyrics" style="max-height: 40vh" class="scroll">
-                        <p class="lyrics-text text-grey-8" :class="{'font-tamil': selectedSong.title !== 'என் வாழ்வின் சாராம்சம்' && selectedSong.title !== 'அன்னை கீதம்'}">{{ selectedSong.lyrics }}</p>
-                    </q-card-section>
-                    <q-card-actions align="right" class="q-pa-md bg-grey-2">
-                        <q-btn flat label="Close" color="primary" v-close-popup />
-                        <q-btn :href="selectedSong.url" target="_blank" type="a" unelevated color="primary" icon="fab fa-youtube" label="Watch on YouTube" class="q-ml-sm" />
-                    </q-card-actions>
-                </q-card>
-            </q-dialog>
-
-             <!-- Badge Chest Dialog -->
-            <q-dialog v-model="badgeDialog">
-                <q-card class="playful-card badge-chest-card" style="width: 500px; max-width: 90vw;">
-                    <q-card-section class="text-center bg-primary text-white">
-                        <div class="text-h5">My Adventure</div>
-                        <div class="text-subtitle1">Total XP: {{ gameState.totalXp }}</div>
-                    </q-card-section>
-                     <q-card-section class="q-pa-md">
-                        <div v-if="earnedBadgesList.length === 0" class="text-center text-grey-7 q-py-lg">
-                             <q-icon name="o_explore" size="4rem" class="q-mb-md"></q-icon>
-                            <div>Your badge collection is empty. Start scrolling to earn badges!</div>
-                        </div>
-                        <q-list separator v-else>
-                            <q-item v-for="badge in earnedBadgesList" :key="badge.label">
-                                <q-item-section avatar>
-                                    <q-icon :name="badge.badgeIcon" color="accent" size="lg" />
-                                </q-item-section>
-                                <q-item-section>
-                                    <q-item-label class="text-weight-bold">{{ badge.badgeName }}</q-item-label>
-                                    <q-item-label caption>+{{ badge.xp }} XP</q-item-label>
-                                </q-item-section>
-                            </q-item>
-                        </q-list>
-                    </q-card-section>
-                    <q-card-actions align="right">
-                        <q-btn 
-                            flat 
-                            label="Reset Adventure" 
-                            color="negative" 
-                            icon="refresh" 
-                            @click="confirmReset" 
-                        />
-                        <q-btn flat label="Close" color="primary" v-close-popup />
-                    </q-card-actions>
-                </q-card>
-            </q-dialog>
-
-        </q-layout>
+<!-- ============ WORLD 1 · TIFFIN ============ -->
+<section id="w1" data-stop class="world w1 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip">World 1 of 7</span><span class="chip lite" id="tiffinChip">Series · 8 of 16 plates out</span></div>
+        <h2><span class="logo-tiffin">#டிபன்<em>சைக்காலஜி</em></span></h2>
+        <p><b>Tiffin Psychology.</b> <span class="ta">நாலு சுற்று · பதினாறு தட்டு.</span> Sixteen breakfast plates, each with one of life's secrets hiding on it: about ourselves, our relationships, our feelings and our celebrations. Pick a plate to play it.</p>
+      </div>
+      <div class="quest" data-q="plate"><span class="q-ic"></span><span><b>Clear a plate</b><small>Quest · +100 XP</small></span></div>
     </div>
 
-    <!-- Vue 3 & Quasar JS -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar@2.16.4/dist/quasar.umd.prod.js"></script>
-    <!-- Canvas Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-    
-    <script>
-        const { ref, reactive, onMounted, onBeforeUnmount, toRefs, computed } = Vue;
+    <div class="tutorial card rv">
+      <button class="tv" data-v="z5-NB3kF9AU" data-t="#டிபன்சைக்காலஜி · விவாத மேடை" data-q="plate"><img src="assets/thumbs/z5-NB3kF9AU.jpg" alt="" loading="lazy"><span class="playdot"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
+      <div class="tx">
+        <span class="chip" style="align-self:flex-start">Tutorial · 3:52</span>
+        <h3>காலை டிபன்: வெறும் உணவா? வாழ்க்கைப் பாடமா?</h3>
+        <p>New here? The trailer sets the table: all sixteen dishes on one stage, with the filter coffee as judge.</p>
+      </div>
+    </div>
 
-        const app = Vue.createApp({
-            setup() {
-                const $q = Quasar.useQuasar();
+    <div id="rounds"></div>
+  </div>
+</section>
 
-                const state = reactive({
-                    drawer: false,
-                    scrollProgress: 0,
-                    bookDialog: false,
-                    songDialog: false,
-                    badgeDialog: false,
-                    selectedBook: null,
-                    selectedSong: null,
-                    gameState: {
-                        totalXp: 0,
-                        earnedBadges: [],
-                    },
-                });
+<!-- ============ WORLD 2 · PAAVAM ============ -->
+<section id="w2" data-stop class="world w2 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip" style="background:var(--mint);color:var(--night)">World 2 of 7</span><span class="chip" style="background:#2A2147" id="paavamChip">New series · 2 episodes</span></div>
+        <h2 class="ta" style="text-transform:none">பாவம்<em>AI</em></h2>
+        <p><b class="ta">உலகத்துலயே confident-ஆன AI.</b> Every episode it calls an impossible everyday question "too easy", fails louder with each try and gives up. Then a human solves it. Go on, ask it something.</p>
+      </div>
+      <div class="quest" data-q="paavam"><span class="q-ic"></span><span><b>Ask Paavam a question</b><small>Quest · +100 XP</small></span></div>
+    </div>
 
-                let observer = null;
+    <div class="pv-grid">
+      <div class="rv">
+        <button class="pv-cover" data-v="zasPGtjEBGc" data-t="பாவம் AI · Ep. 1"><img src="assets/paavam-cover.jpg" alt="பாவம் AI"><span class="playdot"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
+        <div class="pv-eps">
+          <button class="plate" data-v="zasPGtjEBGc" data-t="பாவம் AI · Ep. 1"><figure><img src="assets/thumbs/zasPGtjEBGc.jpg" alt="" loading="lazy"><span class="playdot"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span></figure><span class="meta"><span>Ep. 1</span><small>2:57</small></span></button>
+          <button class="plate" data-v="WRzYeSeW7aA" data-t="பாவம் AI · Ep. 2"><figure><img src="assets/thumbs/WRzYeSeW7aA.jpg" alt="" loading="lazy"><span class="playdot"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span></figure><span class="meta"><span>Ep. 2 · new</span><small>2:57</small></span></button>
+        </div>
+      </div>
 
-                const menuList = [
-                    { label: 'About Me', target: 'about', icon: 'person', badgeIcon: 'o_face', badgeName: 'Explorer Badge', xp: 50 },
-                    { label: 'My Books', target: 'books', icon: 'auto_stories', badgeIcon: 'o_auto_stories', badgeName: 'Author Badge', xp: 100 },
-                    { label: 'My Songs', target: 'music', icon: 'music_note', badgeIcon: 'o_music_note', badgeName: 'Lyricist Badge', xp: 100 },
-                    { label: 'My Work', target: 'profession', icon: 'construction', badgeIcon: 'o_construction', badgeName: 'Techie Badge', xp: 100 },
-                    { label: 'Experimental Labs', target: 'labs', icon: 'science', badgeIcon: 'o_science', badgeName: 'Researcher Badge', xp: 150 },
-                    { label: 'Connect', target: 'contact', icon: 'connect_without_contact', badgeIcon: 'o_connect_without_contact', badgeName: 'Collaborator Badge', xp: 50 },
-                ];
+      <div class="chat rv" id="chat">
+        <div class="chat-top"><img src="assets/paavam-head.png" alt=""><div><b>பாவம்AI</b><small>online · very confident</small></div></div>
+        <div class="chat-body" id="chatBody"><div class="msg hint">Pick a question below and watch it try.</div></div>
+        <div class="chat-asks">
+          <span>Ask Paavam</span>
+          <button class="ask" data-ep="zasPGtjEBGc" data-n="1">இதோ வந்துட்டேன்னா எவ்ளோ நேரம்?</button>
+          <button class="ask" data-ep="WRzYeSeW7aA" data-n="2">அம்மா சாப்டியான்னு கேட்டா reply என்ன?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                const books = [
-                    { title: 'AI எனும் நான்', shortDescription: 'The autobiography of AI, from its birth to its future.', longDescription: 'This book offers a unique first-person narrative from the perspective of Artificial Intelligence itself. It delves into the philosophical questions of its existence, explores its various forms—the Analyst, the Artist, the Commander—and contemplates its future relationship with humanity.', icon: 'fas fa-robot', color: '#4A90E2', buyUrl: '#' },
-                    { title: 'ஆட்டம் ஆரம்பம்', shortDescription: 'Using gamification to achieve success in life.', longDescription: 'This book is a practical playbook that transforms life\'s challenges into an engaging game. It explores how the principles of game design—points, badges, and quests—can be applied to education, work, and personal development to boost motivation and achieve success.', icon: 'fas fa-gamepad', color: '#F5A623', buyUrl: '#' },
-                    { title: 'காலை உணவு சொல்லும் கதைகள்', shortDescription: 'Finding psychological lessons on our breakfast plates.', longDescription: 'A delightful exploration of the profound psychological lessons hidden in our everyday breakfast dishes. From the ego of a puffy poori to the resilience of a dosa, this book reveals how simple foods tell deep stories about our mind, character, and relationships.', icon: 'fas fa-utensils', color: '#50E3C2', buyUrl: '#' },
-                    { title: 'ஏலே, கோலம் போடுலே!', shortDescription: 'A guide to the UN SDGs for a better future.', longDescription: 'Using the simple, beautiful act of drawing a kolam as a metaphor, this book serves as an accessible guide to the 17 UN Sustainable Development Goals. It explains how we can collectively address global challenges and "draw" a better, more sustainable future for our planet.', icon: 'fas fa-globe-asia', color: '#BD10E0', buyUrl: '#' }
-                ];
-                
-                const songs = [
-                    { title: 'அகண்ட மனம்', shortDescription: 'A 10th anniversary song for my wife.', longDescription: 'This song, "Aganda Manam" (The Boundless Heart), is a lyrical journey attempting to capture the immense love and admiration for a partner, speaking of a love so profound that the entire universe watches in awe.', icon: 'favorite', color: '#E91E63', url: 'https://youtu.be/eYHHqbRIZGk/', lyrics: `கண்ணிரண்டு காண்பதற்கு\nபன்னிரண்டு மாதங்களும்\nஉன்னுடனே நானிருப்பேன்\nஉன் உதட்டுச் சிரிப்புக்கு...\n\nதிசை எட்டு காத்திருக்கு\nஉன் வரவைப் பார்ப்பதற்கு.\nபூக்களெல்லாம் பேசியிருக்கு\nநம்மை விட அழகி இப்பெண்தான் போலிருக்கு.\n\nவின் உலகின் தேவதைகள் மண் உலகம் வந்திருக்கு\nஉன் கருணை காண்பதற்கு.\nமேகமெல்லாம் கூடிருக்கு, கிசுகிசுத்து எதிர்பார்த்திருக்கு\nஉன் புன்னகை மழைச் சத்தத்திற்கு.\n\nஅமைதியான ஓடம் அது ஆர்ப்பரிக்கத் தொடங்கிருக்கு\nஉன் மவுனத்தின் வலிமை கண்டு\nமலை ராணிகளும் வியந்திருக்கு\nதம் பசுமையை வெல்லும் உன் ஜொலிப்பிற்கு.\n\nஆழ் கடல் கூட வியந்திருக்கு, சிறிது பயம் கூடக் கொண்டிருக்கு\nஉன் கோபத்தின் ஆழம் கண்டு.\nநீர்வீழ்ச்சிகளும் ஸ்தம்பித்துருக்கு, மவுன மொழி பேசியிருக்கு\nபதில் தெரியாத உன் வினவல்களுக்கு.\n\nபறவைகள் எல்லாம் நின்றிருக்கு\nஉன் பேச்சின் காற்றில் பறப்பதற்கு.\nஅண்டமது வியந்திருக்கு, பொறாமைதான் கொண்டிருக்கு\nஅகண்ட உந்தன் மனதைக் கண்டு.` },
-                    { title: 'நட்பு கீதம்', shortDescription: 'A heartfelt anthem for friendship.', longDescription: 'Presenting "Natpu Geetham", a heartfelt Tamil anthem celebrating the unbreakable bonds of friendship. A song that feels like a warm hug from your closest friend.', icon: 'people', color: '#2196F3', url: 'https://youtu.be/OygO0QpLCu8/', lyrics: `நண்பன் ஒருவன் இருந்தால் போதும்\nநாட்கள் என்றும் இனிதாய் போகும்\nதுன்பம் என்று வந்தால் கூட\nதுச்சமாய் மதிக்கும் எண்ணம் வரும்\n\nகாசு பணம் கேட்காது\nகாதல் போல காயப்படுத்தாது\nதகுதி தரம் பார்க்காது\nதனித்து நம்மை விட்டுச் செல்லாது\n\nதாயின் அன்பும் தந்தையின் அறிவும்\nசேர்ந்தே காட்டும் ஓர் உருவம்\nசோர்வில்லாமல் நீயும் நானும்\nபேசித் தீர்க்கும் நூறு யுகம்\n\nவானம் பார்த்த பூமி போல\nநட்பை தேடும் ஜீவன் நாமும்\nசோகம் தீர்க்கும் மருந்து போல\nதோழன் தோளில் சாயும் பாரம்\n\nசிரித்து மகிழும் வேளைதோறும்\nசேர்ந்து நிற்கும் சொந்தம் ஆகும்\nஅழுது விழும் நாட்கள் கூட\nஅருகில் இருந்து தாங்கிக் கொள்ளும்\n\nஎதிலும் காணா இன்பம்தன்னை\nநட்பில் காண்பீர் நீரே பாரும்\nநட்பு என்னும் நேசம் போதும்...\nஎன்றும்... போதும்...` },
-                    { title: 'என் வாழ்வின் சாராம்சம்', shortDescription: 'A profound love song, "My Life\'s Essence".', longDescription: 'A profound Tamil love song from a husband to his wife, dedicated to the one who is the essence of his life. Every husband\'s unspoken words compiled into a song.', icon: 'spa', color: '#4CAF50', url: 'https://youtu.be/0YY5zcZoA_Q/', lyrics: `(Lyrics for this song will be updated soon!)` },
-                    { title: 'அன்னை கீதம்', shortDescription: "An emotional tribute to a mother's selfless love.", longDescription: '"I must live every day, carrying your memory with me." This song is a deeply personal tribute to the purest form of love known to humanity—a mother\'s selfless love. It\'s a lullaby not for a child to sleep, but for a child to remember.', icon: 'family_restroom', color: '#FF9800', url: 'https://youtu.be/Yl5WQMrb1nU/', lyrics: `(Lyrics for this song will be updated soon!)` }
-                ];
+<div class="tape" data-tape="Now playing ★ Original Tamil songs ★ Words first ★"></div>
 
-                const socials = [
-                    { label: 'Email', icon: 'email', href: 'mailto:hello@hariprav.in', color: 'red-5' },
-                    { label: 'LinkedIn', icon: 'fab fa-linkedin-in', href: 'https://www.linkedin.com/in/haripravin', color: 'light-blue-7' },
-                    { label: 'Instagram', icon: 'fab fa-instagram', href: 'https://www.instagram.com/hariij', color: 'purple-5' },
-                    { label: 'YouTube', icon: 'fab fa-youtube', href: 'https://www.youtube.com/@hari-pravin', color: 'red-7' },
-                    { label: 'Facebook', icon: 'fab fa-facebook-f', href: 'https://www.facebook.com/hariij', color: 'indigo-7' }
-                ];
+<!-- ============ WORLD 3 · JUKEBOX ============ -->
+<section id="w3" data-stop class="world w3 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip">World 3 of 7</span><span class="chip lite">Original Tamil songs</span></div>
+        <h2><span class="ink">The <em>Jukebox</em></span></h2>
+        <p>I write the words first. The melodies, voices and pictures are made with AI tools. Songs that ask why, songs of love from Sangam to 2050, friendship, festivals and science days. Pick a track and press play.</p>
+      </div>
+      <div class="quest" data-q="song"><span class="q-ic"></span><span><b>Play a song</b><small>Quest · +100 XP</small></span></div>
+    </div>
 
-                const scrollTo = (elementId) => {
-                    const el = document.getElementById(elementId);
-                    if (el) {
-                        el.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    state.drawer = false;
-                };
+    <div class="juke rv" id="juke">
+      <div class="juke-l">
+        <button class="screen" id="screen" aria-label="Play selected song"><img id="screenImg" src="assets/thumbs/kU-EvOG246k.jpg" alt=""><span class="playdot" style="opacity:1;transform:none"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
+        <div class="np">
+          <div><small class="pixel" id="npTag">Now loaded · latest</small><h3 id="npTitle">ஏன், ஏன், ஏன்...</h3><p id="npSub">A Children's Day song to spark scientific temper</p></div>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="tracks" id="tracks"></div>
+    </div>
 
-                const updateScrollProgress = () => {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                    state.scrollProgress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
-                };
-                
-                const openBookDialog = (book) => {
-                    state.selectedBook = book;
-                    state.bookDialog = true;
-                };
+    <div class="lyric rv">
+      <svg class="pulse" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70h250l18-34 22 62 20-78 24 96 18-46h150l14-22 16 40 14-18h634"/></svg>
+      <div class="vinyl" aria-hidden="true"><div class="rec"><img src="assets/songs-logo.jpg" alt=""></div><span class="arm"></span></div>
+      <div class="lyric-tx">
+        <span class="chip" style="background:var(--turmeric);color:var(--ink)">From the notebook</span>
+        <blockquote class="kara" aria-label="நண்பன் ஒருவன் இருந்தால் போதும், நாட்கள் என்றும் இனிதாய் போகும்">
+          <span class="ln"><i>நண்பன்</i> <i>ஒருவன்</i> <i>இருந்தால்</i> <i>போதும்</i></span>
+          <span class="ln"><i>நாட்கள்</i> <i>என்றும்</i> <i>இனிதாய்</i> <i>போகும்</i></span>
+        </blockquote>
+        <div class="lyric-foot">
+          <div><b class="ta">நட்பு கீதம்</b><span>A friendship anthem</span></div>
+          <button class="btn sm yel" data-v="OygO0QpLCu8" data-t="நட்பு கீதம்" data-q="song"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>Play the song</button>
+        </div>
+      </div>
+    </div>
 
-                const openSongDialog = (song) => {
-                    state.selectedSong = song;
-                    state.songDialog = true;
-                };
-                
-                const saveGameState = () => {
-                    localStorage.setItem('hariPravinGameState', JSON.stringify(state.gameState));
-                };
+    <div class="shelfrow rv">
+      <div class="side">
+        <h4>Playlists</h4>
+        <div class="pills">
+          <a class="pill" href="https://www.youtube.com/playlist?list=PLK8tFALdGPBZKyQwsVAJfXP8dCA6eAf2_" target="_blank" rel="noopener">கொண்டாட்டக் காலம் <small>13</small></a>
+          <a class="pill" href="https://www.youtube.com/playlist?list=PLK8tFALdGPBY3y_YAkLLxLmv-xDyH3GfK" target="_blank" rel="noopener">உறவுகளின் சாரல் <small>9</small></a>
+          <a class="pill" href="https://www.youtube.com/playlist?list=PLK8tFALdGPBZpz3IiTfx_X1JtLvJrZdea" target="_blank" rel="noopener">வாழ்வின் வரிகள் <small>8</small></a>
+        </div>
+      </div>
+      <div class="side">
+        <h4>Streaming on</h4>
+        <div class="pills">
+          <a class="pill lat" href="https://open.spotify.com/artist/7fn0f6uITJdzmaFfD4DqZ6" target="_blank" rel="noopener">Spotify</a>
+          <a class="pill lat" href="https://music.apple.com/us/artist/hari-pravin/1843956639" target="_blank" rel="noopener">Apple Music</a>
+          <a class="pill lat" href="https://music.amazon.in/artists/B0FTTQ5P6S/hari-pravin" target="_blank" rel="noopener">Amazon Music</a>
+          <a class="pill lat" href="https://music.youtube.com/channel/UC_Hs2jEQ9gP4XVOD4bpZibQ" target="_blank" rel="noopener">YouTube Music</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                const loadGameState = () => {
-                    const savedState = localStorage.getItem('hariPravinGameState');
-                    if (savedState) {
-                        state.gameState = JSON.parse(savedState);
-                    }
-                };
+<!-- ============ WORLD 4 · LIBRARY ============ -->
+<section id="w4" data-stop class="world w4 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip">World 4 of 7</span><span class="chip lite">1 unlocked · 3 in the making</span></div>
+        <h2><span class="ink">The <em>Library</em></span></h2>
+        <p>One book is out and on the shelf. Three more are locked for now, the way good levels are.</p>
+      </div>
+      <div class="quest" data-q="book"><span class="q-ic"></span><span><b>Flip the book over</b><small>Quest · +100 XP</small></span></div>
+    </div>
 
-                 const triggerBadgeEffect = (target) => {
-                    switch (target) {
-                        case 'about': confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } }); break;
-                        case 'books': confetti({ particleCount: 100, angle: 60, spread: 55, origin: { x: 0 } }); confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 } }); break;
-                        case 'music': var end = Date.now() + (2 * 1000); var colors = ['#FFD700', '#FF6347', '#8A2BE2']; (function frame() { confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: colors }); confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: colors }); if (Date.now() < end) { requestAnimationFrame(frame); } }()); break;
-                        case 'profession': confetti({ particleCount: 150, spread: 180, ticks: 100, origin: { y: 0.5, x: 0.5 }, shapes: ['star'], scalar: 1.2 });
-                        case 'labs': confetti({ particleCount: 200, spread: 100, origin: { y: 0.7 }, colors: ['#8A2BE2', '#FF6347', '#50E3C2'] }); break;
-                        case 'contact': var count = 200; var defaults = { origin: { y: 0.7 } }; function fire(particleRatio, opts) { confetti(Object.assign({}, defaults, opts, { particleCount: Math.floor(count * particleRatio) })); } fire(0.25, { spread: 26, startVelocity: 55 }); fire(0.2, { spread: 60 }); fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 }); fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 }); fire(0.1, { spread: 120, startVelocity: 45 }); break;
-                    }
-                };
-                
-                const showBadgeNotification = (section) => {
-                     $q.notify({
-                        html: true,
-                        message: `
-                            <div class="row items-center no-wrap">
-                                <i class="material-icons-outlined q-mr-md" style="font-size: 2.5rem; color: var(--accent-color);">${section.badgeIcon}</i>
-                                <div>
-                                    <div class="text-weight-bold" style="color: var(--accent-color);">Badge Unlocked!</div>
-                                    <div>${section.badgeName} (+${section.xp} XP)</div>
-                                </div>
-                            </div>`,
-                        color: 'dark',
-                        position: 'bottom-left',
-                        timeout: 4000,
-                        classes: 'playful-card',
-                        style: 'border: 2px solid var(--accent-color); background-color: rgba(44, 62, 80, 0.9);'
-                    });
-                };
-                
-                const earnBadge = (sectionId) => {
-                    const section = menuList.find(item => item.target === sectionId);
-                    if (section && !state.gameState.earnedBadges.includes(section.target)) {
-                        state.gameState.earnedBadges.push(section.target);
-                        state.gameState.totalXp += section.xp;
-                        saveGameState();
-                        showBadgeNotification(section);
-                        triggerBadgeEffect(section.target);
-                    }
-                };
+    <div class="slots">
+      <article class="slot open card rv">
+        <span class="chip tagx" style="background:var(--leaf)">Unlocked</span>
+        <div>
+          <button class="flip" id="flip" aria-label="Flip the book to read the back cover">
+            <span class="flip-in"><img src="assets/book-cover.jpg" alt="AI எனும் நான், front cover"><img class="back" src="assets/book-back.jpg" alt="Back cover"></span>
+          </button>
+          <span class="flip-hint pixel">Tap the book to flip it</span>
+        </div>
+        <div style="display:flex;flex-direction:column;height:100%">
+          <h3>AI எனும் நான்</h3>
+          <div class="sub">செயற்கை நுண்ணறிவின் சுயசரிதை</div>
+          <p class="qz">செயற்கை நுண்ணறிவு (AI), தன் கதையைத் தானே சொன்னால் எப்படி இருக்கும்?</p>
+          <p>The autobiography of artificial intelligence, told in its own voice and in plain Tamil.</p>
+          <div class="facts"><span>சந்தியா பதிப்பகம்</span><span>2025</span><span>₹130</span></div>
+          <a class="btn red sm" href="https://sandhyapublications.com/book/68f8ba55b7d76d1ebc757ff3" target="_blank" rel="noopener">Get the book</a>
+        </div>
+      </article>
 
-                const earnedBadgesList = computed(() => {
-                    return menuList.filter(item => state.gameState.earnedBadges.includes(item.target));
-                });
+      <div class="lockcol">
+        <article class="slot locked card rv">
+          <span class="chip tagx">Locked · being written</span>
+          <div class="mystery"><svg viewBox="0 0 64 64" fill="none" stroke="#1A1512" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="20" width="52" height="30" rx="14"/><path d="M20 30v10M15 35h10"/><circle cx="42" cy="32" r="2.5" fill="#1A1512"/><circle cx="48" cy="38" r="2.5" fill="#1A1512"/></svg><span class="lockb pixel">?</span></div>
+          <div><h3>ஆட்டம் ஆரம்பம்</h3>
+          <p>A playbook for turning life's challenges into a game: points, badges and quests for study, work and habits. You are playing a small preview of it right now.</p></div>
+        </article>
+        <article class="slot locked card rv">
+          <span class="chip tagx">Locked · book and series to come</span>
+          <div class="mystery"><svg viewBox="0 0 64 64" fill="none" stroke="#1A1512" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8c-11 0-19 8-19 18 0 7 4 12 8 15v9h18v-6h6v-9l5-2-5-9c-1-9-6-16-13-16z"/><path d="M27 24c0-4 3-6 6-6s5 2 5 5c0 4-5 4-5 9M33 38v.5"/></svg><span class="lockb pixel">?</span></div>
+          <div><h3>மனம் செய்யும் மாயங்கள்</h3>
+          <div class="sub">சின்னஞ்சிறு கதைகள் மூலம் ஒரு உளவியல் பயணம்</div>
+          <p>How the mind tricks us, one short story at a time: the peak-end rule, the dopamine loop and more, each with the research behind it.</p></div>
+        </article>
+        <article class="slot locked card rv">
+          <span class="chip tagx">Locked · the book of the series</span>
+          <div class="mystery"><svg viewBox="0 0 100 76"><rect x="3" y="3" width="94" height="70" rx="12" fill="#D9DEE3" stroke="#1A1512" stroke-width="4"/><rect x="12" y="12" width="46" height="22" rx="6" fill="#C2C9D0" stroke="#1A1512" stroke-width="3"/><rect x="64" y="12" width="24" height="22" rx="6" fill="#C2C9D0" stroke="#1A1512" stroke-width="3"/><rect x="12" y="40" width="76" height="24" rx="6" fill="#C2C9D0" stroke="#1A1512" stroke-width="3"/></svg><span class="lockb pixel">?</span></div>
+          <div><h3>#TiffinPsychology</h3>
+          <p>The life lessons hiding in everyday breakfast dishes, from the ego of a puffed poori to the resilience of a dosa.</p>
+          <a class="btn sm" href="#w1">Play the series</a></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
-                const resetGameState = () => {
-                    // Completely removes the saved data from the browser
-                    localStorage.removeItem('hariPravinGameState');
-                    
-                    // Reset local state variables
-                    state.gameState.totalXp = 0;
-                    state.gameState.earnedBadges = [];
-                    
-                    // Close dialog and refresh to reset the intersection observers
-                    state.badgeDialog = false;
-                    window.location.reload(); 
-                };
+<div class="tape r" data-tape="Boss level ★ {years} years in the game ★ Since 2000 ★"></div>
 
-                const confirmReset = () => {
-                    $q.dialog({
-                        title: 'Reset Progress?',
-                        message: 'This will clear all your earned XP and badges. Are you sure?',
-                        cancel: true,
-                        persistent: true,
-                        ok: { label: 'Yes, Reset', color: 'negative', flat: true },
-                        cancel: { label: 'Keep Them', color: 'primary', flat: true }
-                    }).onOk(() => {
-                        resetGameState();
-                    });
-                };
+<!-- ============ WORLD 5 · WORK ============ -->
+<section id="w5" data-stop class="world w5 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip" style="background:var(--turmeric);color:var(--ink)">World 5 of 7</span><span class="chip" style="background:#3A322C">Boss level · the day job</span></div>
+        <h2>I turn ideas into <em>products that ship.</em></h2>
+        <p>Co-founder of Krazy Buddy Technologies. Building since 2000: <span data-fact="years">26</span> years and counting, for global enterprises, textile exporters in Karur and young startups alike.</p>
+      </div>
+      <div class="quest" data-q="work"><span class="q-ic"></span><span><b>Open the main campaign</b><small>Quest · +100 XP</small></span></div>
+    </div>
 
-                onMounted(() => {
-                    loadGameState();
-                    observer = new IntersectionObserver(
-                        (entries) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting) {
-                                    entry.target.classList.add('is-visible');
-                                    earnBadge(entry.target.id);
-                                }
-                            });
-                        },
-                        { threshold: 0.5 }
-                    );
-                    const elements = document.querySelectorAll('.scroll-animate');
-                    elements.forEach(el => observer.observe(el));
-                    window.addEventListener('scroll', updateScrollProgress);
-                    updateScrollProgress();
-                });
+    <div class="sheet">
+      <div class="panel rv">
+        <h4>Class path · <span data-fact="years">26</span> years XP, since 2000</h4>
+        <ol class="path">
+          <li><b>Developer</b><span>Where it started: writing the code.</span></li>
+          <li><b>Solutions architect</b><span>Designing the systems others build on.</span></li>
+          <li><b>Product manager</b><span>Roadmaps, user stories, agile delivery.</span></li>
+          <li class="now"><b>Co-founder and consultant</b><span>Krazy Buddy Technologies · current class</span></li>
+        </ol>
+        <h4>Allies</h4>
+        <div class="allies"><span>IKEA</span><span>Oriflame</span><span>Sandvik</span><span>Piab</span></div>
+        <ul class="guilds"><li><b>Karur textile exporters</b><span>Websites and curated presentations that tell their story to buyers.</span></li><li><b>Startups</b><span>TeachSub and others, from first prototype to shipped product.</span></li></ul>
+        <h4>Skills equipped</h4>
+        <div class="skills">
+          <div><b>Product strategy</b><span>Roadmaps and positioning a team can deliver.</span></div>
+          <div><b>System design</b><span>SaaS, ERP, enterprise web and mobile.</span></div>
+          <div><b>Agile delivery</b><span>Hands-on from prototype to release.</span></div>
+          <div><b>Applied AI</b><span>AI, OCR and media where they earn their keep.</span></div>
+        </div>
+      </div>
 
-                onBeforeUnmount(() => {
-                    if (observer) {
-                        const elements = document.querySelectorAll('.scroll-animate');
-                        elements.forEach(el => observer.unobserve(el));
-                    }
-                    window.removeEventListener('scroll', updateScrollProgress);
-                });
+      <div class="panel camp rv">
+        <div class="camp-art"><span class="chip">Main campaign</span><img src="assets/mapsdg-dashboard.png" alt="MapSDG dashboard" loading="lazy"></div>
+        <div class="camp-body">
+          <h3>MapSDG</h3>
+          <p>A SaaS platform that helps Indian colleges and universities collect, map, measure and report their work on the 17 Sustainable Development Goals, with AI-assisted evidence for accreditation and ranking cycles.</p>
+          <div class="kv">
+            <div><small>My role</small>Product strategy, architecture and delivery, with TeachSub Technologies</div>
+            <div><small>Built</small>AI mapping with reasoning, document analysis, one-click reports</div>
+            <div><small>In play at</small>SRM IST, Sri Sairam, Vinayaka Mission's and more</div>
+          </div>
+          <blockquote>"The reports that come out of MapSDG are very professional."</blockquote>
+          <cite>Prof. Paromita Chakraborty, SRM Institute of Science and Technology</cite>
+          <div class="camp-actions">
+            <a class="btn yel sm" href="https://mapsdg.com" target="_blank" rel="noopener" data-q="work">Visit mapsdg.com</a>
+            <a class="btn dark sm" href="#p2">Book me for a quest</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                return {
-                    ...toRefs(state),
-                    menuList,
-                    books,
-                    songs,
-                    socials,
-                    scrollTo,
-                    openBookDialog,
-                    openSongDialog,
-                    earnedBadgesList,
-                    confirmReset,
-                    resetGameState
-                };
-            }
-        });
-        
-        app.use(Quasar, {
-            config: {},
-            plugins: { Notify: Quasar.Notify, Dialog: Quasar.Dialog }
-        })
-        app.mount('#q-app');
-    </script>
+<!-- ============ WORLD 6 · SIDE QUESTS ============ -->
+<section id="w6" data-stop class="world w6 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip">World 6 of 7</span><span class="chip lite">Labs · 4 side quests</span></div>
+        <h2><span class="ink">Side <em>quests</em></span></h2>
+        <p>Interactive, bilingual explainers. Each takes one big idea and makes it easy and fun to explore, whatever your age.</p>
+      </div>
+      <div class="quest" data-q="lab"><span class="q-ic"></span><span><b>Enter a side quest</b><small>Quest · +150 XP</small></span></div>
+    </div>
+    <div class="carts">
+      <a class="cart card rv" style="--cc:var(--turmeric)" href="https://hariprav.in/magic-reactor/" target="_blank" rel="noopener" data-q="lab"><div class="lab"><span class="pixel">Cart 01</span><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="5" fill="#1A1512"/><ellipse cx="32" cy="32" rx="26" ry="10"/><ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(120 32 32)"/></svg></div><div class="tx"><h3>India's Magic Reactor</h3><p>The fast breeder reactor at Kalpakkam and the three-stage nuclear plan.</p><span class="go">Play <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+      <a class="cart card rv" style="--cc:#7CC7F2" href="https://hariprav.in/magic-hydrogen/" target="_blank" rel="noopener" data-q="lab"><div class="lab"><span class="pixel">Cart 02</span><svg viewBox="0 0 64 64"><path d="M32 8C22 22 16 30 16 39a16 16 0 0032 0c0-9-6-17-16-31z"/><path d="M25 40a7 7 0 007 7"/></svg></div><div class="tx"><h3>India's Magic Hydrogen</h3><p>Clean fuel from water and nuclear heat, told as a gamified story.</p><span class="go">Play <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+      <a class="cart card rv" style="--cc:#F29BC4" href="https://hariprav.in/skill-shapes/" target="_blank" rel="noopener" data-q="lab"><div class="lab"><span class="pixel">Cart 03</span><svg viewBox="0 0 64 64"><path d="M10 14h44M32 14v38"/><path d="M14 30h14M36 30h14" opacity=".45"/></svg></div><div class="tx"><h3>Skill Shapes</h3><p>I, T, Pi or Comb: find the career shape that holds up in the AI era.</p><span class="go">Play <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+      <a class="cart card rv" style="--cc:#B9A6F5" href="https://hariprav.in/comprehend-consume/" target="_blank" rel="noopener" data-q="lab"><div class="lab"><span class="pixel">Cart 04</span><svg viewBox="0 0 64 64"><path d="M8 16c8-4 16-4 24 2 8-6 16-6 24-2v32c-8-4-16-4-24 2-8-6-16-6-24-2z"/><path d="M32 18v32"/></svg></div><div class="tx"><h3>Comprehend &amp; Consume</h3><p>An interactive essay on what changes when a patient teacher is within everyone's reach.</p><span class="go">Play <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORLD 7 · SCROLLS ============ -->
+<section id="w7" data-stop class="world w7 dots">
+  <div class="wrap">
+    <div class="wh rv">
+      <div>
+        <div class="no"><span class="chip">World 7 of 7</span><span class="chip lite">Essays on Medium</span></div>
+        <h2><span class="ink">The <em>Scrolls</em></span></h2>
+        <p>Long reads on AI and philosophy: what intelligence is, what it is doing to us, and how to think clearly beside it. Mostly in English, sometimes in Tamil.</p>
+      </div>
+      <div class="quest" data-q="scroll"><span class="q-ic"></span><span><b>Open a scroll</b><small>Quest · +100 XP</small></span></div>
+    </div>
+
+    <div class="scrolls">
+      <a class="feat card rv" href="https://haripravin.medium.com/what-we-can-comprehend-is-what-we-can-consume-c018ae560b7b" target="_blank" rel="noopener" data-q="scroll">
+        <img src="assets/medium/m1.jpg" alt="" loading="lazy">
+        <div class="tx">
+          <div class="meta-row pixel"><span>Latest</span><span>Jul 2026</span><span>13 min read</span></div>
+          <h3>What We Can Comprehend Is What We Can Consume</h3>
+          <p>For most of history, understanding belonged to a few. Then, almost quietly, a patient teacher came within everyone's reach.</p>
+        </div>
+      </a>
+      <div class="art-list">
+        <a class="art card rv" href="https://haripravin.medium.com/come-back-in-five-hours-c8dea27310a8" target="_blank" rel="noopener" data-q="scroll"><img src="assets/medium/m2.jpg" alt="" loading="lazy"><div class="tx"><div class="meta-row pixel"><span>Jun 2026</span><span>14 min</span></div><h3>Come Back in Five Hours</h3></div></a>
+        <a class="art card rv" href="https://haripravin.medium.com/prompting-is-the-new-literacy-a9a4cb02ed26" target="_blank" rel="noopener" data-q="scroll"><img src="assets/medium/m3.jpg" alt="" loading="lazy"><div class="tx"><div class="meta-row pixel"><span>Mar 2026</span><span>13 min</span></div><h3>Prompting Is the New Literacy</h3></div></a>
+        <a class="art card rv" href="https://haripravin.medium.com/the-philosophy-apple-taught-the-world-then-slowly-forgot-392692e8a90e" target="_blank" rel="noopener" data-q="scroll"><img src="assets/medium/m4.jpg" alt="" loading="lazy"><div class="tx"><div class="meta-row pixel"><span>Mar 2026</span><span>11 min</span></div><h3>The Philosophy Apple Taught the World — Then Slowly Forgot</h3></div></a>
+        <a class="art card rv" href="https://haripravin.medium.com/if-ai-becomes-intelligent-will-it-become-conscious-79bc76a43703" target="_blank" rel="noopener" data-q="scroll"><img src="assets/medium/m5.jpg" alt="" loading="lazy"><div class="tx"><div class="meta-row pixel"><span>Mar 2026</span><span>10 min</span></div><h3>If AI Becomes Intelligent, Will It Become Conscious?</h3></div></a>
+        <a class="art card rv" href="https://haripravin.medium.com/the-future-arrived-without-permission-0fd45c07fc89" target="_blank" rel="noopener" data-q="scroll"><img src="assets/medium/m6.jpg" alt="" loading="lazy"><div class="tx"><div class="meta-row pixel"><span>Feb 2026</span><span>7 min</span></div><h3>The Future Arrived Without Permission</h3></div></a>
+      </div>
+    </div>
+    <div class="more-row rv">
+      <span class="chip lite">Many more scrolls on Medium</span>
+      <a class="btn sm" href="https://haripravin.medium.com/" target="_blank" rel="noopener" data-q="scroll">All essays on Medium</a>
+    </div>
+  </div>
+</section>
+
+<div class="tape" data-tape="Final level ★ Player 2 wanted ★ Co-op mode ★"></div>
+
+<!-- ============ FINAL · PLAYER 2 ============ -->
+<section id="p2" data-stop class="final dots">
+  <div class="wrap">
+    <div class="final-grid">
+      <div>
+        <span class="chip" id="finalChip">Final level · co-op mode</span>
+        <h2 style="margin-top:18px"><span class="ink">Player 2,</span><span class="ink"><em>press start.</em></span></h2>
+        <p class="lead" id="finalLead">The best levels are the ones played together. Choose your mode and I will write back with dates.</p>
+      </div>
+      <div class="final-owl" data-perch="final"><div class="bubble" id="finalSay">Insert coin. Or just say hello.</div><div data-owl="track"></div></div>
+    </div>
+
+    <div class="modes">
+      <a class="mode card" href="mailto:hello@hariprav.in?subject=Co-op%20mode%3A%20hands-on%20consultation" data-book="consult" style="--mc:var(--turmeric)">
+        <span class="pixel mtag">Co-op · 1 on 1</span>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="22" cy="22" r="9"/><circle cx="44" cy="26" r="7"/><path d="M6 52c2-11 9-16 16-16s14 5 16 16M36 50c1-7 4-11 9-11s10 4 13 13"/></svg>
+        <h3>Hands-on consultation</h3>
+        <p>I sit with you and your product: strategy, architecture, AI workflows, or the feature that will not ship.</p>
+        <span class="go">Book a session <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <a class="mode card" href="mailto:hello@hariprav.in?subject=Party%20mode%3A%20group%20training" data-book="training" style="--mc:var(--mint)">
+        <span class="pixel mtag">Party mode · teams</span>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="8"/><circle cx="13" cy="26" r="6"/><circle cx="51" cy="26" r="6"/><path d="M18 52c1-11 7-16 14-16s13 5 14 16M3 50c1-7 4-11 9-12M61 50c-1-7-4-11-9-12"/></svg>
+        <h3>Group training</h3>
+        <p>Workshops for teams and campuses on working with AI, prompting, product thinking and gamification.</p>
+        <span class="go">Plan a workshop <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <a class="mode card" href="mailto:hello@hariprav.in?subject=Stage%20mode%3A%20a%20talk" data-book="talk" style="--mc:#B9A6F5">
+        <span class="pixel mtag">Stage mode · talks</span>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="25" y="6" width="14" height="28" rx="7"/><path d="M15 28a17 17 0 0034 0M32 45v12M22 57h20"/></svg>
+        <h3>Talks and sessions</h3>
+        <p>For colleges, conferences and communities, in Tamil or English: AI, how we think beside it, and life as a game.</p>
+        <span class="go">Invite me <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span>
+      </a>
+    </div>
+
+    <div class="final-row">
+      <div>
+        <span class="pixel" style="display:block;margin-bottom:12px;color:#FFE1DC">Or just say hello</span>
+        <a class="btn mail" href="mailto:hello@hariprav.in?subject=Hello%20from%20hariprav.in" data-q="hello">hello@hariprav.in</a>
+        <div class="social">
+          <a class="pill lat" href="https://www.youtube.com/@HariPravinOfficial" target="_blank" rel="noopener" data-q="hello">YouTube</a>
+          <a class="pill lat" href="https://www.linkedin.com/in/haripravin" target="_blank" rel="noopener" data-q="hello">LinkedIn</a>
+          <a class="pill lat" href="https://haripravin.medium.com/" target="_blank" rel="noopener" data-q="hello">Medium</a>
+          <a class="pill lat" href="https://www.instagram.com/haripravinofficial" target="_blank" rel="noopener" data-q="hello">Instagram</a>
+          <a class="pill lat" href="https://x.com/hariij" target="_blank" rel="noopener" data-q="hello">X</a>
+          <a class="pill lat" href="https://www.threads.net/@haripravinofficial" target="_blank" rel="noopener" data-q="hello">Threads</a>
+          <a class="pill lat" href="https://www.facebook.com/haripravinofficial" target="_blank" rel="noopener" data-q="hello">Facebook</a>
+          <a class="pill lat" href="https://open.spotify.com/artist/7fn0f6uITJdzmaFfD4DqZ6" target="_blank" rel="noopener" data-q="hello">Spotify</a>
+          <a class="pill lat" href="https://music.apple.com/us/artist/hari-pravin/1843956639" target="_blank" rel="noopener" data-q="hello">Apple Music</a>
+        </div>
+      </div>
+      <div class="coin card">
+        <div class="slotface" aria-hidden="true"><span class="slit"></span><span class="pixel">Insert coin</span></div>
+        <div class="coin-tx">
+          <h3>Enjoyed the game? Insert a coin.</h3>
+          <p>Buy me a tea and the next episode gets made a little sooner.</p>
+          <div class="coins">
+            <button class="tea" data-amt="25" data-name="Tea"><b>₹25</b><span>Tea</span></button>
+            <button class="tea" data-amt="50" data-name="Ginger"><b>₹50</b><span>Ginger</span></button>
+            <button class="tea" data-amt="75" data-name="Masala"><b>₹75</b><span>Masala</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div class="wrap"><span>© <span data-fact="year">2026</span> M J G Hari Pravin · Chennai<span id="asof"></span></span><span>Built as a game, because <span class="ta">ஆட்டம் ஆரம்பம்</span>.</span></div></div>
+</section>
+
+</main>
+
+<!-- guide owl -->
+<div class="guide" id="guide">
+  <div class="guide-say" id="guideSay"><small>Next quest</small><span id="guideTxt">Press START to begin.</span></div>
+  <button class="guide-owl" id="guideOwl" aria-label="Open quest log"><span data-owl="track"></span></button>
+</div>
+
+<!-- quest log -->
+<aside class="log" id="log" aria-label="Quest log" aria-hidden="true">
+  <div class="log-top">
+    <span data-owl></span>
+    <div><h3>Quest log</h3><p class="pixel"><span id="logLv">Lv 1 · Visitor</span> · <span id="logXp">0 / 900 XP</span></p><span class="xpbar"><i id="logFill"></i></span></div>
+    <button class="x" id="closeLog" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+  </div>
+  <div class="log-body">
+    <h4>Quests</h4>
+    <ul class="ql" id="ql"></ul>
+    <h4>Badge chest</h4>
+    <div class="badges" id="badges"></div>
+  </div>
+  <div class="log-foot"><span>Progress is saved on this device.</span><button id="reset">Reset game</button></div>
+</aside>
+
+<!-- video modal -->
+<div class="scrim" id="vscrim">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-top"><h3 id="vtitle"></h3><button class="x" data-close aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="frame" id="vframe"></div>
+    <div class="modal-foot"><span class="pixel">Esc to close</span><a id="vlink" target="_blank" rel="noopener">Watch on YouTube</a></div>
+  </div>
+</div>
+
+<!-- speedrun -->
+<div class="scrim" id="sscrim">
+  <div class="modal speed" role="dialog" aria-modal="true">
+    <div class="modal-top"><h3 style="font-family:var(--display);text-transform:uppercase">Speedrun · the 1 minute version</h3><button class="x" data-close aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="speed-body">
+      <img src="assets/portrait.jpg" alt="Hari Pravin">
+      <div>
+        <h3>Hari Pravin</h3>
+        <p>Technology consultant and co-founder of Krazy Buddy Technologies, Chennai. Also a Tamil author, lyricist and YouTube creator.</p>
+        <ul>
+          <li><small>Experience</small><span><span data-fact="years">26</span> years, since 2000: developer, solutions architect, product manager, consultant</span></li>
+          <li><small>Worked with</small><span>IKEA, Oriflame, Sandvik, Piab; textile exporters in Karur; startups such as TeachSub</span></li>
+          <li><small>Now building</small><span>MapSDG, an AI-assisted SDG platform for higher education</span></li>
+          <li><small>Book</small><span class="ta">AI எனும் நான் (சந்தியா பதிப்பகம், 2025)</span></li>
+          <li><small>On YouTube</small><span><span data-fact="subs">8.48K</span> subscribers · <span class="ta">#டிபன்சைக்காலஜி, பாவம் AI</span> and original Tamil songs</span></li>
+          <li><small>Writes</small><span>Essays on AI and philosophy on Medium</span></li>
+        </ul>
+        <div class="speed-actions">
+          <a class="btn red sm" href="mailto:hello@hariprav.in" data-q="hello">Email Hari</a>
+          <a class="btn sm" href="https://www.linkedin.com/in/haripravin" target="_blank" rel="noopener" data-q="hello">LinkedIn</a>
+          <a class="btn sm" href="https://mapsdg.com" target="_blank" rel="noopener" data-q="work">MapSDG</a>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot"><span class="timer" id="timer">Run time 0:00</span><span>Prefer the fun way? Close this and press START.</span></div>
+  </div>
+</div>
+
+<!-- booking -->
+<div class="scrim" id="bscrim">
+  <div class="modal bookm" role="dialog" aria-modal="true" aria-labelledby="bTitle">
+    <div class="modal-top"><h3 id="bTitle" style="font-family:var(--display);text-transform:uppercase">Co-op request</h3><button class="x" data-close aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <form class="book-body" id="bForm" novalidate>
+      <fieldset class="seg"><legend class="pixel">Mode</legend>
+        <label><input type="radio" name="mode" value="consult" checked><span>Hands-on consultation</span></label>
+        <label><input type="radio" name="mode" value="training"><span>Group training</span></label>
+        <label><input type="radio" name="mode" value="talk"><span>Talk or session</span></label>
+      </fieldset>
+      <div class="frow">
+        <label class="fld"><span class="pixel">Your name</span><input name="name" required autocomplete="name"></label>
+        <label class="fld"><span class="pixel">Email</span><input name="email" type="email" required autocomplete="email"></label>
+      </div>
+      <label class="fld"><span class="pixel">Organisation · optional</span><input name="org" autocomplete="organization"></label>
+      <label class="fld"><span class="pixel" id="bWhatLab">What should we work on?</span><textarea name="what" rows="3" required></textarea></label>
+      <div class="frow">
+        <label class="fld"><span class="pixel">When suits you</span><input name="when" placeholder="For example: second week of January"></label>
+        <label class="fld grp"><span class="pixel">How many people</span><select name="size"><option>Up to 10</option><option>10 to 30</option><option>30 to 100</option><option>More than 100</option></select></label>
+      </div>
+      <label class="fld grp"><span class="pixel">Where</span><select name="where"><option>In person, Chennai</option><option>In person, elsewhere</option><option>Online</option></select></label>
+      <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="err pixel" id="bErr" role="alert"></p>
+      <div class="book-foot"><span>Hari reads every request himself and replies by email with dates.</span><button class="btn red sm" type="submit" id="bSend">Send request</button></div>
+    </form>
+    <div class="book-done" id="bDone" hidden>
+      <span class="star" style="width:86px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" style="width:44%"><path d="M4.500 12.500l5 5 10-11"/></svg></span>
+      <h3 id="bDoneTitle">Request sent</h3>
+      <p id="bDoneText"></p>
+      <pre id="bSummary"></pre>
+      <div class="speed-actions"><button class="btn sm" id="bCopy" type="button">Copy the summary</button><button class="btn sm dark" type="button" data-close>Back to the game</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- insert coin -->
+<div class="scrim" id="cscrim">
+  <div class="modal coinm" role="dialog" aria-modal="true">
+    <div class="modal-top"><h3 style="font-family:var(--display);text-transform:uppercase">Insert coin · <span id="cAmt">₹25</span> <span id="cName">Tea</span></h3><button class="x" data-close aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="coinm-body">
+      <div class="qr" id="qr"></div>
+      <div>
+        <h3>Scan with any UPI app</h3>
+        <p>GPay, PhonePe, Paytm and others. The amount is filled in for you; nothing is charged until you confirm in your own app.</p>
+        <p class="upi pixel" id="cUpi"></p>
+        <a class="btn red sm" id="cOpen" href="#">Open my UPI app</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<canvas id="fx"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="site.js"></script>
+<script>
+/* the blend: plain words, and badges that arrive on their own */
+(() => {
+  const $ = q => document.querySelector(q);
+  /* the menu is the one list of section names: the feather bar, the islands and the owl all read it */
+  window.SECTIONS = [...document.querySelectorAll('.plainnav a')].map(a => ({id: a.getAttribute('href').slice(1), name: a.textContent.trim()}));
+  document.querySelectorAll('#prog i').forEach((d, k) => { if (window.SECTIONS[k]) d.dataset.n = window.SECTIONS[k].name; });
+  const PLAIN = {w1: ['Series', '8 of 16 plates out'], w2: ['Comedy series', null], w3: ['Songs', 'Original Tamil songs'], w4: ['Books', null], w5: ['Work', 'Since 2000'], w6: ['Experiments', 'Play with an idea'], w7: ['Writing', 'On AI and philosophy']};
+  for (const id in PLAIN) { const chips = document.querySelectorAll('#' + id + ' .wh .no .chip'); if (chips[0]) chips[0].textContent = PLAIN[id][0]; if (chips[1] && PLAIN[id][1] && id !== 'w1') chips[1].textContent = PLAIN[id][1]; }
+  const tc = $('#tiffinChip'), trim = () => { const t = tc.textContent.replace(/^Series · /, ''); if (t !== tc.textContent) tc.textContent = t; }; trim(); new MutationObserver(trim).observe(tc, {childList: true});
+  $('#finalChip').textContent = 'Say hello'; new MutationObserver(() => { if ($('#finalChip').textContent !== 'Say hello') $('#finalChip').textContent = 'Say hello'; }).observe($('#finalChip'), {childList: true});
+  $('#p2 h2').innerHTML = '<span class="ink">Shall we make</span><span class="ink"><em>something together?</em></span>';
+  /* plain words in place of the game's */
+  const say = (sel, text) => { const el = $(sel); if (el) el.textContent = text; };
+  const keep = (sel, fix) => { const el = $(sel); if (!el) return; const run = () => { const t = fix(el.textContent); if (t !== el.textContent) el.textContent = t; }; run(); new MutationObserver(run).observe(el, {childList: true, characterData: true, subtree: true}); };
+  say('#w1 .tutorial .chip', 'Start here · 3:52');
+  say('#w4 .wh p', 'One book is out and on the shelf. Three more are on the way.');
+  keep('#w4 .wh .no .chip:nth-child(2)', () => '1 out · 3 on the way');
+  ['Out now', 'Being written', 'Book and series to come', 'The book of the series'].forEach((t, k) => { const c = document.querySelectorAll('#w4 .slot .tagx')[k]; if (c) c.textContent = t; });
+  document.querySelectorAll('#w4 .lockb').forEach(e => { e.textContent = 'soon'; });
+  say('#w4 .flip-hint', 'Tap the book to see the back cover');
+  const h4 = document.querySelectorAll('#w5 .panel h4'); if (h4[0]) h4[0].innerHTML = 'My path · <span data-fact="years">' + (new Date().getFullYear() - 2000) + '</span> years, since 2000'; if (h4[1]) h4[1].textContent = 'Worked with'; if (h4[2]) h4[2].textContent = 'What I do';
+  say('#w5 .camp-art .chip', 'Featured work'); say('#w5 .path li.now span', 'Krazy Buddy Technologies · today');
+  keep('#w5 .wh .no .chip:nth-child(2)', () => 'Since 2000');
+  say('#w5 .camp-actions .btn.dark', 'Work with me');
+  $('#w6 .wh h2').innerHTML = '<span class="ink">Explainers you can <em>play with</em></span>';
+  document.querySelectorAll('#w6 .lab .pixel').forEach(e => e.remove());
+  document.querySelectorAll('#w6 .cart .go').forEach(e => { e.firstChild.textContent = 'Open '; });
+  $('#w7 .wh h2').innerHTML = '<span class="ink">Long reads, <em>between builds</em></span>';
+  say('#w7 .more-row .chip', 'Many more essays on Medium');
+  keep('#finalLead', () => 'A hands-on consultation, a workshop for your team, a talk, or simply a hello. Choose one and I will write back with dates.');
+  say('.coin h3', 'Enjoyed this? Buy me a tea.'); say('.slotface .pixel', 'Tea fund');
+  keep('#bTitle', t => t.replace('Co-op request', 'Your request'));
+  { const h = $('#cscrim .modal-top h3'); if (h && h.firstChild && h.firstChild.nodeType === 3) h.firstChild.nodeValue = 'Buy me a tea · '; }
+  say('#log .log-top h3', 'Your badges'); say('#log .log-foot button', 'Start over');
+  addEventListener('scroll', function first() { if (scrollY > innerHeight * .5) { removeEventListener('scroll', first); window.HP && window.HP.complete('start'); } }, {passive: true});
+})();
+</script>
+<div id="owlsay" role="status"></div>
+
+<!-- the trail: what you have found -->
+<aside class="log trailp" id="trail" aria-label="The owl's trail" aria-hidden="true">
+  <div class="log-top" style="grid-template-columns:1fr auto">
+    <div><h3>The owl's trail</h3><p class="pixel"><span data-trail="count">0</span> of 8 feathers · <span data-trail="rank">Visitor</span></p></div>
+    <button class="x" id="trailClose" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+  </div>
+  <div class="log-body">
+    <div class="tscore"><div><b data-trail="score">0</b><span class="pixel">Score</span></div><div><b data-trail="count">0</b><span class="pixel">Feathers</span></div><div><b data-trail="stickers">0</b><span class="pixel">Stickers</span></div></div>
+    <h4>Feathers · answer the owl on each island</h4>
+    <ul class="ql" id="trailList"></ul>
+    <h4>Stickers · <span data-trail="stickers">0</span> of <span data-trail="stotal">16</span></h4>
+    <div class="badges" id="album"></div>
+    <h4>How the points work</h4>
+    <ul class="rules">
+      <li><b>+100</b><span>for every feather you win</span></li>
+      <li><b>+50</b><span>more if you answer on the first try, without a hint</span></li>
+      <li><b>+25</b><span>for every sticker</span></li>
+    </ul>
+    <p class="tnote">The most anyone can score is <b data-trail="max">1600</b>. Your rank follows your feathers: <span data-trail="next"></span>.</p>
+    <button class="btn yel sm goldbtn" id="trailGold">See your golden feather</button>
+  </div>
+  <div class="log-foot"><span>Saved on this device.</span><button id="trailReset" type="button">Start over</button></div>
+</aside>
+
+<!-- the golden feather -->
+<div class="scrim" id="gscrim">
+  <div class="modal goldm" role="dialog" aria-modal="true" aria-labelledby="gTitle">
+    <div class="modal-top"><h3 id="gTitle" style="font-family:var(--display);text-transform:uppercase">The golden feather is yours</h3><button class="x" data-gclose aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="gold-body">
+      <canvas id="gcard" width="800" height="800" aria-label="Your golden feather card"></canvas>
+      <div>
+        <h3>You found all eight.</h3>
+        <p>That means you now know the whole of what I do, which is more than most people I meet. Thank you for looking properly.</p>
+        <label class="fld"><span class="pixel">Your name on the card · optional</span><input id="gname" maxlength="26" autocomplete="name" placeholder="Your name"></label>
+        <div class="speed-actions" style="margin-top:14px"><button class="btn red sm" id="gsave" type="button">Save my card</button><a class="btn sm" href="#p2" data-gclose>Say hello to Hari</a></div>
+        <p class="tnote" style="margin-top:14px">If you write to me, mention the golden feather. I would like to know who explored it all.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- the owl's nest: what the visitor has won back, found and become -->
+<div class="scrim" id="nscrim">
+  <div class="modal nestm" role="dialog" aria-modal="true" aria-labelledby="nTitle">
+    <div class="modal-top"><h3 id="nTitle" style="font-family:var(--display);text-transform:uppercase">The owl's nest</h3><button class="x" data-nclose aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="#1A1512" stroke-width="2.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="nest-body">
+      <div class="nest-owl">
+        <div class="fan" id="nfan"></div>
+        <svg id="nowl" viewBox="0 0 200 210" aria-hidden="true" stroke="#1A1512" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path class="ob" d="M52 38l18 24M148 38l-18 24"/><path class="ow" d="M30 118c-8 22-4 44 10 56l10-50zM170 118c8 22 4 44-10 56l-10-50z"/><ellipse class="ob" cx="100" cy="118" rx="64" ry="74"/><path class="ob" d="M46 66L52 30l30 22zM154 66l-6-36-30 22z"/><ellipse cx="100" cy="150" rx="36" ry="36" fill="#FFF6E3"/><path d="M88 138l6 6 6-6M100 138l6 6 6-6M94 154l6 6 6-6" fill="none" stroke-width="4"/><circle cx="74" cy="92" r="24" fill="#fff"/><circle cx="126" cy="92" r="24" fill="#fff"/><circle cx="78" cy="94" r="10" fill="#1A1512"/><circle cx="122" cy="94" r="10" fill="#1A1512"/><circle cx="74.500" cy="90" r="3.200" fill="#fff" stroke="none"/><circle cx="118.500" cy="90" r="3.200" fill="#fff" stroke="none"/><path d="M92 108h16l-8 16z" fill="#F4B41A"/><path d="M78 190l-8 12M78 190l2 14M78 190l10 10M122 190l8 12M122 190l-2 14M122 190l-10 10" stroke="#F4B41A" stroke-width="6" fill="none"/></svg>
+        <p class="nsay" id="nsay"></p>
+      </div>
+      <div class="nest-side">
+        <h4>You and the owl</h4>
+        <ol class="ladder" id="nladder"></ol>
+        <h4>Gifts in the nest · <span id="ngc">0</span> of 8 · one on every island</h4>
+        <div class="gifts" id="ngifts"></div>
+        <h4>Surprises · <span id="nsc">0</span> of <span id="nst">7</span> · find them yourself</h4>
+        <div class="gifts sur" id="nsur"></div>
+        <div class="nest-foot"><button class="btn yel sm" id="nGold" type="button" hidden>See your golden feather</button><button id="nReset" type="button">Start over</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="trail.js"></script>
+<script src="nest.js"></script>
+<script src="voice.js"></script>
+<script type="module" src="world.js"></script>
 </body>
 </html>

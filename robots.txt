@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mockup/
+
+Sitemap: https://hariprav.in/sitemap.xml
