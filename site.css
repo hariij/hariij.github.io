@@ -1022,6 +1022,10 @@ html.journey body.proof{height:auto;overflow:visible}
   .wl span{font-size:calc(15px * var(--z))} .wl b{font-size:calc(13px * var(--z))}
 }
 
+/* the name tag that floated above the first island on the opening screen was a leftover from the old map view:
+   it showed for one island only, and the menu and the cards already say where you are */
+.blend #labels{display:none}
+
 /* ===== nest.css ===== */
 /* hariprav.in · look proof · the owl and its nest (a layer over blend.css) */
 .nest #trail,.nest .ptsfly{display:none!important}
