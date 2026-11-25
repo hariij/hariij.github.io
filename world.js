@@ -146,7 +146,7 @@ function framing() {
   if (BLEND && atlas) {                                                   // look along the row from the near end, far enough back that every island is in view
     const th = lerp(1.12, .62, wide), ph = lerp(.5, .38, wide); aC.set(POS[7].x / 2, .4, 0); aD.set(-Math.sin(th) * Math.cos(ph), Math.sin(ph), Math.cos(th) * Math.cos(ph));
     if (fit.a !== a) { fit.a = a; probe.fov = cam.fov; probe.aspect = a; probe.updateProjectionMatrix(); let d = 34;
-      for (; d < 340; d += 3) { probe.position.copy(aC).addScaledVector(aD, d); probe.lookAt(aC); probe.updateMatrixWorld(); if (POS.every(p => { aP.set(p.x, p.y + 2, p.z).project(probe); return Math.abs(aP.x) < .8 && aP.y > -.6 && aP.y < .52; })) break; } fit.d = d; }
+      for (; d < 340; d += 3) { probe.position.copy(aC).addScaledVector(aD, d); probe.lookAt(aC); probe.updateMatrixWorld(); if (POS.every(p => { aP.set(p.x, p.y + 2, p.z).project(probe); return Math.abs(aP.x) < .74 && aP.y > -.6 && aP.y < .52; })) break; } fit.d = d; }
     wantAim.copy(aC); wantPos.copy(aC).addScaledVector(aD, fit.d); return; }
   if (BLEND) {                                                            // the owl's island, big, in the part of the window the words leave free
     const ph = innerWidth <= 760, T = POS[mapMode ? 0 : cur], pitch = mapMode ? .3 : .4;
@@ -239,7 +239,7 @@ function frame(now) {
   /* labels */
   const w = innerWidth, h = innerHeight;
   labels.forEach((l, i) => { v3.set(POS[i].x, POS[i].y + (mapMode ? 4.6 : 4.1), POS[i].z).project(cam); const x = (v3.x * .5 + .5) * w, y = (-v3.y * .5 + .5) * h, vis = v3.z < 1 && x > -80 && x < w + 80 && y > 70 && y < h - 20;
-    l.style.opacity = vis && (BLEND ? atlas : (!JOURNEY || mapMode)) ? (i === cur || mapMode || atlas ? 1 : .86) : 0; l.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) translate(-50%,-50%) scale(${i === cur && !mapMode ? 1.12 : .92})`; });
+    l.style.opacity = vis && (BLEND ? atlas : (!JOURNEY || mapMode)) ? (i === cur || mapMode || atlas ? 1 : .86) : 0; l.style.transform = `translate3d(${(atlas ? clamp(x, l.offsetWidth * .5 + 8, w - l.offsetWidth * .5 - 8) : x).toFixed(1)}px,${y.toFixed(1)}px,0) translate(-50%,-50%) scale(${i === cur && !mapMode ? 1.12 : .92})`; });
   renderer.render(scene, cam);
 }
 paintInfo(); if (JOURNEY) follow();
