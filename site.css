@@ -1009,6 +1009,19 @@ html.journey body.proof{height:auto;overflow:visible}
 .me{align-self:center}
 .me img{flex:none;aspect-ratio:1/1;height:auto;object-position:50% 50%}
 
+/* ---------- big windows: everything you read grows with the window, so the words never look small and lost ----------
+   Up to a full-HD width nothing changes. Beyond it the panels, the top bar, the pop-ups and the tracker scale up together. */
+:root{--z:1}
+@media (min-width:1800px){:root{--z:1.15}}
+@media (min-width:2100px){:root{--z:1.3}}
+@media (min-width:2500px){:root{--z:1.45}}
+@media (min-width:1800px){
+  .blend .world,.blend .final,.blend .hello,.blend .ptop,.blend #prog,#harisays,.blend .scrim .modal,.blend .toasts,.blend #trail{zoom:var(--z)}
+  .blend .scrim .modal{max-height:calc(100vh / var(--z) - 28px)}
+  #owlsay{font-size:calc(15px * var(--z));max-width:calc(250px * var(--z));padding:calc(10px * var(--z)) calc(14px * var(--z)) calc(8px * var(--z))}
+  .wl span{font-size:calc(15px * var(--z))} .wl b{font-size:calc(13px * var(--z))}
+}
+
 /* ===== nest.css ===== */
 /* hariprav.in · look proof · the owl and its nest (a layer over blend.css) */
 .nest #trail,.nest .ptsfly{display:none!important}

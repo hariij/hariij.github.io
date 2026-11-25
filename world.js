@@ -126,6 +126,7 @@ const FAN = []; { const g = group(O.body, { p: [0, -1.0, -.45], r: [-.12, 0, 0] 
   [0xF4B41A, 0x7FDBA6, 0xC2398B, 0x4A5FC1, 0x9DB2C6, 0x43A35B, 0xFFF6E3, 0xD63A2F].forEach((c, k) => { const piv = group(g, { r: [0, 0, -(k - 3.5) * .3] }); ball(piv, .5, c, { p: [0, 2.3, 0], s: [.5, 1.7, .1], t: .045, seg: 18 }); piv.visible = false; FAN.push({ piv, on: false, k: 0 }); }); }
 window.OWL.wear = list => FAN.forEach((f, k) => { f.on = !!list[k]; });
 window.OWL.gold = v => tinted.forEach(([mat, c]) => mat.color.setHex(v ? GOLDEN.get(c) : c));
+document.dispatchEvent(new CustomEvent('hp:owlready'));                 // saved feathers and colour can be put on now, before the owl is first seen
 const perchOf = i => POS[i].clone().add(PERCH);
 O.owl.position.copy(perchOf(0));
 
@@ -138,7 +139,7 @@ function framing() {
   const a = cam.aspect, wide = clamp((a - .8) / .9);
   if (BLEND) {                                                            // the owl's island, big, in the part of the window the words leave free
     const ph = innerWidth <= 760, T = POS[mapMode ? 0 : cur], pitch = mapMode ? .3 : .4;
-    const span = ph ? (mapMode ? .6 : .78) : mapMode ? lerp(.35, .4, wide) : lerp(.35, .37, wide), nx = ph ? (mapMode ? -.08 : 0) : mapMode ? lerp(.44, .46, wide) : lerp(.52, .56, wide), ny = ph ? (mapMode ? 1 - 440 / innerHeight : .44) : -.02;
+    const span = ph ? (mapMode ? .6 : .78) : mapMode ? lerp(.35, .4, wide) : lerp(.35, .37, wide), nx = ph ? (mapMode ? -.08 : 0) : mapMode ? lerp(.44, .46, wide) : lerp(.52, .56, wide) - (innerWidth >= 1800 ? .05 : 0), ny = ph ? (mapMode ? 1 - 440 / innerHeight : .44) : -.02;
     const hw = 7.4 / (2 * span), hh = hw / a, d = hh / Math.tan(cam.fov * PI / 360), sn = Math.sin(pitch), c = Math.cos(pitch);
     wantPos.set(T.x + .7 - nx * hw + mouse.x * .5, T.y + 1.3 + sn * d - ny * hh * c - mouse.y * .3, T.z + c * d + ny * hh * sn);
     wantAim.set(wantPos.x, wantPos.y - sn * d, wantPos.z - c * d); return; }

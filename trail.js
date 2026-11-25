@@ -148,7 +148,7 @@ function collect(el, t) {
   bump(); pts(S.first[t.id] ? 150 : 100); SFX.win(); document.dispatchEvent(new CustomEvent('hp:feather', { detail: { id: t.id, first: !!S.first[t.id], n: feathers() } }));
   if (window.OWL) window.OWL.cheer();
   const n = feathers();
-  owl(n === 8 ? 'All eight! Now look what you have unlocked.' : `${cap(t.f)} is yours${S.first[t.id] ? ', first try' : ''}! ${8 - n} to go.`, 4600);
+  owl(n === 8 ? (NEST ? 'All eight are home! Look at me now.' : 'All eight! Now look what you have unlocked.') : NEST ? `${cap(t.f)} is back${S.first[t.id] ? ', first try' : ''}! I am wearing it. ${8 - n} to go.` : `${cap(t.f)} is yours${S.first[t.id] ? ', first try' : ''}! ${8 - n} to go.`, 4600);
   if (firsts() >= 3) setTimeout(() => award('sharp'), 1100);
   if (firsts() === 8) setTimeout(() => award('perfect'), 2000);
   if (n === 8 && !S.gold) { S.gold = true; save(); setTimeout(openGold, 1300); }
@@ -184,7 +184,7 @@ document.addEventListener('hp:quest', e => { const id = e.detail && e.detail.id;
 new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { const s = n.querySelector && n.querySelector('small'); if (!s) return; if (/Level up/.test(s.textContent)) { n.style.display = 'none'; return; } if (/Badge/.test(s.textContent)) { s.textContent = NEST ? 'A gift for the nest' : 'Sticker earned · +25'; const b = n.querySelector('b'), q = b && window.HP && window.HP.list ? window.HP.list().find(x => x.name === b.textContent) : null; const nm = q && (NEST && window.NESTGIFTS ? window.NESTGIFTS[q.id] : NAME[q.id]); if (nm) b.textContent = nm; else if (NEST && q) n.style.display = 'none'; } }))).observe($('#toasts'), { childList: true });
 
 /* stickers from the trail itself */
-const OWLSAYS = ['Hoo! You found me. Have a sticker.', 'That tickles.', 'Feathers are won, not plucked.', 'Hoo hoo. Keep scrolling, friend.', 'I see everything from up here.'];
+const OWLSAYS = [NEST ? 'Hoo! You found me. That is one of my surprises.' : 'Hoo! You found me. Have a sticker.', 'That tickles.', 'Feathers are won, not plucked.', 'Hoo hoo. Keep scrolling, friend.', 'I see everything from up here.'];
 let taps = 0;
 document.addEventListener('hp:owl', () => {
   const O = window.OWL, wasAsleep = asleep; wake(); if (O && O.flip) O.flip(); SFX.hoot();
@@ -206,7 +206,7 @@ wake();
 { const juke = $('#juke'); let danced = false; if (juke) new MutationObserver(() => { const on = juke.classList.contains('playing'); if (window.OWL && window.OWL.dance) window.OWL.dance(on); if (on && !danced) { danced = true; owl('Now this I can dance to.', 3600); } }).observe(juke, { attributes: true, attributeFilter: ['class'] }); }
 $$('.tea').forEach(b => b.addEventListener('click', () => award('tea')));
 let sawEnd = false;
-addEventListener('scroll', () => { if (S.st.nest) return; const doc = document.documentElement; if (scrollY + innerHeight > doc.scrollHeight - innerHeight * .4) sawEnd = true; else if (sawEnd && scrollY < 60) { award('nest'); owl('Back to the nest. That earns a secret sticker.', 4600); } }, { passive: true });
+addEventListener('scroll', () => { if (S.st.nest) return; const doc = document.documentElement; if (scrollY + innerHeight > doc.scrollHeight - innerHeight * .4) sawEnd = true; else if (sawEnd && scrollY < 60) { award('nest'); owl(NEST ? 'Back to the nest. That is one of my surprises.' : 'Back to the nest. That earns a secret sticker.', 4600); } }, { passive: true });
 setTimeout(() => { const h = new Date().getHours(); if (h >= 22 || h < 5) award('night'); }, 9000);
 
 /* ---------- the golden feather: a card to keep ---------- */
@@ -244,5 +244,5 @@ const hook = $('#hookBtn'); if (hook) hook.addEventListener('click', e => { if (
 window.TG = { TRAIL, FEATHERS, GOLD, EXTRA, S: () => S, score, feathers, firsts, openGold,
   reset() { try { localStorage.removeItem(KEY); localStorage.removeItem('hp-game-v2'); } catch (e) {} try { history.scrollRestoration = 'manual'; } catch (e) {} scrollTo(0, 0); location.replace(location.pathname); } };
 paint();
-setTimeout(() => { if (scrollY < 80) owl(feathers() ? `Welcome back. You have ${feathers()} of 8 feathers.` : 'Hoo! I have hidden eight feathers out here, no two alike. Scroll, and I will fly with you.', 6500); }, reduce ? 300 : 2600);
+setTimeout(() => { if (scrollY < 80) owl(feathers() ? (NEST ? `Welcome back. ${feathers()} of my 8 feathers are home.` : `Welcome back. You have ${feathers()} of 8 feathers.`) : (NEST ? 'Hoo! I have lost my eight feathers, one on each island. Scroll, and I will fly with you.' : 'Hoo! I have hidden eight feathers out here, no two alike. Scroll, and I will fly with you.'), 6500); }, reduce ? 300 : 2600);
 })();
