@@ -135,8 +135,19 @@ let cur = 0, from = BLEND && !reduce ? -1 : 0, flyT = BLEND && !reduce ? -.75 : 
 const hits = scene.children.flatMap(o => o.children.filter(m => m.userData.i !== undefined));
 const camPos = new THREE.Vector3(), camAim = new THREE.Vector3(), wantPos = new THREE.Vector3(), wantAim = new THREE.Vector3();
 const mouse = { x: 0, y: 0, has: false };
+/* the map: step back and see all eight islands at once, each with its name; tap one to go there */
+let atlas = false; const fit = { a: 0, d: 90 }, probe = new THREE.PerspectiveCamera(), aC = new THREE.Vector3(), aD = new THREE.Vector3(), aP = new THREE.Vector3();
+function setAtlas(v) { v = !!v; if (!BLEND || atlas === v) return; atlas = v; document.body.classList.toggle('atlas', atlas);
+  const b = document.getElementById('mapb'); if (b) b.setAttribute('aria-pressed', atlas ? 'true' : 'false'); document.dispatchEvent(new CustomEvent('hp:atlas', { detail: { on: atlas } })); }
+if (BLEND) { const b = document.getElementById('mapb'); if (b) b.addEventListener('click', () => setAtlas(!atlas));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setAtlas(false); }); addEventListener('wheel', () => setAtlas(false), { passive: true }); addEventListener('touchmove', () => setAtlas(false), { passive: true }); }
 function framing() {
   const a = cam.aspect, wide = clamp((a - .8) / .9);
+  if (BLEND && atlas) {                                                   // look along the row from the near end, far enough back that every island is in view
+    const th = lerp(1.12, .62, wide), ph = lerp(.5, .38, wide); aC.set(POS[7].x / 2, .4, 0); aD.set(-Math.sin(th) * Math.cos(ph), Math.sin(ph), Math.cos(th) * Math.cos(ph));
+    if (fit.a !== a) { fit.a = a; probe.fov = cam.fov; probe.aspect = a; probe.updateProjectionMatrix(); let d = 34;
+      for (; d < 340; d += 3) { probe.position.copy(aC).addScaledVector(aD, d); probe.lookAt(aC); probe.updateMatrixWorld(); if (POS.every(p => { aP.set(p.x, p.y + 2, p.z).project(probe); return Math.abs(aP.x) < .8 && aP.y > -.6 && aP.y < .52; })) break; } fit.d = d; }
+    wantAim.copy(aC); wantPos.copy(aC).addScaledVector(aD, fit.d); return; }
   if (BLEND) {                                                            // the owl's island, big, in the part of the window the words leave free
     const ph = innerWidth <= 760, T = POS[mapMode ? 0 : cur], pitch = mapMode ? .3 : .4;
     const span = ph ? (mapMode ? .6 : .78) : mapMode ? lerp(.35, .4, wide) : lerp(.35, .37, wide), nx = ph ? (mapMode ? -.08 : 0) : mapMode ? lerp(.44, .46, wide) : lerp(.52, .56, wide) - (innerWidth >= 1800 ? .05 : 0), ny = ph ? (mapMode ? 1 - 440 / innerHeight : .44) : -.02;
@@ -197,7 +208,7 @@ if (JOURNEY) { mapMode = true; addEventListener('scroll', follow, { passive: tru
 renderer.domElement.addEventListener('pointerdown', e => { downAt = [e.clientX, e.clientY]; });
 renderer.domElement.addEventListener('pointerup', e => { if (!downAt) return; const dx = e.clientX - downAt[0], dy = e.clientY - downAt[1]; downAt = null;
   if (JOURNEY && Math.hypot(dx, dy) < 8 && owlHit(e)) { cheerAt = performance.now() / 1000; document.dispatchEvent(new CustomEvent('hp:owl')); return; }
-  if (JOURNEY) { const i = Math.hypot(dx, dy) < 8 ? pick(e) : -1; if (i >= 0) stops[i + 1].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: BLEND ? 'start' : 'center' }); return; }
+  if (JOURNEY) { const i = Math.hypot(dx, dy) < 8 ? pick(e) : -1; if (i >= 0) setAtlas(false); if (i >= 0) stops[i + 1].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: BLEND ? 'start' : 'center' }); return; }
   if (Math.abs(dx) > 60) return go(cur + (dx < 0 ? 1 : -1)); const i = pick(e); if (i >= 0) go(i); });
 addEventListener('pointermove', e => { mouse.x = e.clientX / innerWidth * 2 - 1; mouse.y = e.clientY / innerHeight * 2 - 1; mouse.has = e.pointerType !== 'touch'; renderer.domElement.style.cursor = (JOURNEY && owlHit(e)) || pick(e) >= 0 ? 'pointer' : ''; }, { passive: true });
 
@@ -228,7 +239,7 @@ function frame(now) {
   /* labels */
   const w = innerWidth, h = innerHeight;
   labels.forEach((l, i) => { v3.set(POS[i].x, POS[i].y + (mapMode ? 4.6 : 4.1), POS[i].z).project(cam); const x = (v3.x * .5 + .5) * w, y = (-v3.y * .5 + .5) * h, vis = v3.z < 1 && x > -80 && x < w + 80 && y > 70 && y < h - 20;
-    l.style.opacity = vis && (!JOURNEY || mapMode) ? (i === cur || mapMode ? 1 : .86) : 0; l.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) translate(-50%,-50%) scale(${i === cur && !mapMode ? 1.12 : .92})`; });
+    l.style.opacity = vis && (BLEND ? atlas : (!JOURNEY || mapMode)) ? (i === cur || mapMode || atlas ? 1 : .86) : 0; l.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) translate(-50%,-50%) scale(${i === cur && !mapMode ? 1.12 : .92})`; });
   renderer.render(scene, cam);
 }
 paintInfo(); if (JOURNEY) follow();

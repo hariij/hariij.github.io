@@ -177,8 +177,40 @@ function whenBack(fn) { let away = false, tries = 0; const t = setInterval(() =>
 document.addEventListener('hp:quest', e => { const id = e.detail && e.detail.id; if (!id || id === 'start') return;
   const q = window.HP && window.HP.list ? window.HP.list().find(x => x.id === id) : null, gift = NEST && window.NESTGIFTS ? window.NESTGIFTS[id] : null, name = gift || NAME[id] || (q && q.name) || '';
   whenBack(away => { const O = window.OWL; if (O) { O.cheer(); if (O.flip) O.flip(); } SFX.win();
-    owl(gift ? (away ? `Welcome back! ${gift} went into my nest while you were away. Thank you.` : `${gift} for my nest! Thank you.`) : (away ? `Welcome back! You earned a sticker while you were away: ${name}.` : `Nicely done. A sticker for you: ${name}.`), 6000, NEST ? () => document.dispatchEvent(new CustomEvent('hp:nest')) : null);
-    if (away && q && window.HP.toast) window.HP.toast(NEST ? 'A gift for the nest' : 'Sticker earned · +25', name, q.icon, q.c); }); });
+    const back = away || cameBack; cameBack = false;
+    owl(gift ? (back ? `Welcome back! You went and looked, so ${gift.charAt(0).toLowerCase() + gift.slice(1)} goes into my nest. Thank you.` : `${gift} for my nest! Thank you.`) : (back ? `Welcome back! You went and looked. A sticker for you: ${name}.` : `Nicely done. A sticker for you: ${name}.`), 6000, NEST ? () => document.dispatchEvent(new CustomEvent('hp:nest')) : null); }); });
+
+/* a link that leaves the site (an explainer, an essay, MapSDG, a profile): the gift is for going and looking, not for the click.
+   Nothing is given at the click. It is given when the visitor comes back, if they were away long enough to have looked.
+   If the page never lost them (the link opened behind, or a mail app took it), it is given after a moment. */
+let cameBack = false, out = null; const LOOKED = 6000;
+/* Hari's own pages (the explainers, MapSDG) allow being shown inside this one, so they open in the viewer the videos use.
+   The visitor never leaves: the gift is given in front of them after a few seconds of looking. Other sites refuse to be framed. */
+const INSIDE = /^https:\/\/(hariprav\.in\/[a-z0-9-]+\/?$|(www\.)?mapsdg\.com\/?$)/i; let view = null;
+function openPage(a) { const vs = $('#vscrim'), id = a.dataset.q, url = a.href, own = /\/\/hariprav\.in\//i.test(url), head = a.querySelector('h3, h4, b');
+  const title = /mapsdg/i.test(url) ? 'MapSDG' : (head ? head.textContent : a.textContent).trim();
+  $('#vtitle').textContent = title; const l = $('#vlink'); l.href = url; l.textContent = 'Open in a new tab';
+  $('#vframe').innerHTML = `<iframe src="${url}" title="${title.replace(/"/g, '')}"${own ? '' : ' sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"'} allow="fullscreen"></iframe>`;
+  vs.classList.add('open', 'page'); if (window.HP && window.HP.sfx) window.HP.sfx.tap();
+  if (view) clearTimeout(view.t);
+  view = { id, given: window.HP.isDone(id), t: setTimeout(() => { if (view && view.id === id && !view.given) { view.given = true; window.HP.complete(id); } }, 5000) }; }
+new MutationObserver(() => { const vs = $('#vscrim'); if (vs.classList.contains('open') || !vs.classList.contains('page')) return;
+  vs.classList.remove('page'); $('#vlink').textContent = 'Watch on YouTube'; const v = view; view = null; if (!v) return; clearTimeout(v.t);
+  if (!v.given) setTimeout(() => owl('That was a quick look. Stay a little longer and there is something for my nest.', 5200), 400);
+}).observe($('#vscrim'), { attributes: true, attributeFilter: ['class'] });
+document.addEventListener('click', e => { const a = e.target.closest && e.target.closest('a[data-q]'); if (!a || a.dataset.v) return;
+  if (INSIDE.test(a.href) && !(e.metaKey || e.ctrlKey || e.shiftKey || e.button)) { e.preventDefault(); e.stopPropagation(); openPage(a); return; }
+  const id = a.dataset.q; e.stopPropagation();                                   // the page's own click rule would give it at once
+  if (window.HP && window.HP.isDone(id)) return;
+  if (out) clearTimeout(out.t);
+  out = { id, left: 0, t: setTimeout(() => { if (out && out.id === id && !out.left) { out = null; window.HP.complete(id); } }, 3000) };
+}, true);
+const gone = () => { if (out && !out.left) { out.left = Date.now(); clearTimeout(out.t); } };
+const home = () => { if (!out || !out.left || document.hidden) return; const o = out, away = Date.now() - o.left; out = null;
+  if (away >= LOOKED) { cameBack = true; setTimeout(() => window.HP.complete(o.id), 500); }
+  else setTimeout(() => owl('Back already? Go and have a proper look. Something for my nest will be waiting.', 5200), 500); };
+addEventListener('blur', gone); addEventListener('focus', home);
+document.addEventListener('visibilitychange', () => { if (document.hidden) gone(); else home(); });
 
 /* stickers that come from the page's own actions: say so in plain words */
 new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { const s = n.querySelector && n.querySelector('small'); if (!s) return; if (/Level up/.test(s.textContent)) { n.style.display = 'none'; return; } if (/Badge/.test(s.textContent)) { s.textContent = NEST ? 'A gift for the nest' : 'Sticker earned · +25'; const b = n.querySelector('b'), q = b && window.HP && window.HP.list ? window.HP.list().find(x => x.name === b.textContent) : null; const nm = q && (NEST && window.NESTGIFTS ? window.NESTGIFTS[q.id] : NAME[q.id]); if (nm) b.textContent = nm; else if (NEST && q) n.style.display = 'none'; } }))).observe($('#toasts'), { childList: true });

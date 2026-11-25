@@ -24,8 +24,8 @@ window.NESTRANK = () => LADDER[level()][1];
 const GIFTS = [
   ['plate', 'w1', 'A breakfast plate', 'Play the trailer or any plate'], ['paavam', 'w2', 'A sprout', 'Ask Paavam something'],
   ['song', 'w3', 'A music note', 'Play a song'], ['book', 'w4', 'A little book', 'Flip the book over'],
-  ['work', 'w5', 'A spark', 'Visit the featured work'], ['lab', 'w6', 'A flask', 'Open an explainer'],
-  ['scroll', 'w7', 'A page', 'Open an essay'], ['hello', 'p2', 'A postcard', 'Open any contact or social link'],
+  ['work', 'w5', 'A spark', 'Go and see the featured work'], ['lab', 'w6', 'A flask', 'Go and try an explainer'],
+  ['scroll', 'w7', 'A page', 'Go and read an essay'], ['hello', 'p2', 'A postcard', 'Visit any of my profiles, or write to me'],
 ];
 window.NESTGIFTS = Object.fromEntries(GIFTS.map(g => [g[0], g[2]]));
 const HEART = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.500C4.500 15 3 10.500 5.200 7.300 7 4.700 10.600 5 12 7.600 13.400 5 17 4.700 18.800 7.300 21 10.500 19.500 15 12 20.500z"/></svg>';
@@ -41,6 +41,12 @@ function paint() {
   /* on the owl itself, in the world */
   if (window.OWL && window.OWL.wear) { window.OWL.wear(got); window.OWL.gold(n === 8); }
   const rk = $('#nrank'); if (rk) rk.textContent = LADDER[lv][1];
+  /* the opening card tells the story as it stands now, not as it began */
+  const hk = $('.hook'); if (hk) { const k = $('.pixel', hk), h = $('h3', hk), p = $('p', hk);
+    if (!hk.dataset.h) { hk.dataset.k = k.textContent; hk.dataset.h = h.textContent; hk.dataset.p = p.textContent; }
+    if (n === 8) { k.textContent = 'Thank you'; h.textContent = 'All eight feathers are home.'; p.textContent = `The owl is whole again, and you are its ${LADDER[lv][1].toLowerCase()}. Open the nest to see everything you found.`; }
+    else if (n > 0) { k.textContent = 'Help the owl'; h.textContent = n === 1 ? 'One of the eight feathers is home.' : `${n} of the eight feathers are home.`; p.textContent = `${8 - n} still to find. Answer the owl on each island to win a feather back, and try things to find gifts for its nest.`; }
+    else { k.textContent = hk.dataset.k; h.textContent = hk.dataset.h; p.textContent = hk.dataset.p; } }
   if (!ns.classList.contains('open')) return;
   /* the owl in its nest, wearing what it has won back */
   $('#nfan').innerHTML = TG.TRAIL.map((t, k) => `<button type="button" class="nf ${got[k] ? 'got' : ''}" style="--a:${((k - 3.5) * 21).toFixed(1)}deg" data-f="${t.id}" title="${got[k] ? t.f : 'Still on ' + t.name}" aria-label="${got[k] ? t.f + ', won' : t.f + ', still on ' + t.name}">${TG.FEATHERS[t.id]}</button>`).join('');
@@ -73,6 +79,8 @@ $('#nGold').addEventListener('click', () => { open(false); TG.openGold(); });
 /* the owl says so when you move up the ladder */
 let was = level();
 document.addEventListener('hp:trail', () => { paint(); const lv = level(); if (lv > was) { const l = LADDER[lv]; document.dispatchEvent(new CustomEvent('hp:friend', { detail: { level: lv } })); setTimeout(() => { if (window.OWL) { window.OWL.say(l[3], 5200); window.OWL.cheer(); } if (window.HP && window.HP.toast) window.HP.toast('You and the owl', l[1], HEART, '#D63A2F'); }, 2400); } was = lv; });
-document.addEventListener('hp:owlready', paint);                        // the 3D owl loads after this script: dress it the moment it exists
+document.addEventListener('hp:owlready', paint);
+/* on the map every island's name tag carries its feather: won, or still waiting */
+document.addEventListener('hp:atlas', e => { if (!e.detail.on) return; const S = TG.S(); $$('#labels .wl').forEach((l, k) => { const t = TG.TRAIL[k]; if (!t) return; let f = $('.wf', l); if (!f) { f = document.createElement('i'); f.className = 'wf'; f.innerHTML = TG.FEATHERS[t.id]; l.appendChild(f); } f.classList.toggle('got', !!S.got[t.id]); }); });                        // the 3D owl loads after this script: dress it the moment it exists
 paint();
 })();
