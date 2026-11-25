@@ -73,5 +73,6 @@ $('#nGold').addEventListener('click', () => { open(false); TG.openGold(); });
 /* the owl says so when you move up the ladder */
 let was = level();
 document.addEventListener('hp:trail', () => { paint(); const lv = level(); if (lv > was) { const l = LADDER[lv]; document.dispatchEvent(new CustomEvent('hp:friend', { detail: { level: lv } })); setTimeout(() => { if (window.OWL) { window.OWL.say(l[3], 5200); window.OWL.cheer(); } if (window.HP && window.HP.toast) window.HP.toast('You and the owl', l[1], HEART, '#D63A2F'); }, 2400); } was = lv; });
+document.addEventListener('hp:owlready', paint);                        // the 3D owl loads after this script: dress it the moment it exists
 paint();
 })();
