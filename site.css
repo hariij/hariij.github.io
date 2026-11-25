@@ -1026,6 +1026,36 @@ html.journey body.proof{height:auto;overflow:visible}
    it showed for one island only, and the menu and the cards already say where you are */
 .blend #labels{display:none}
 
+/* ---------- the viewer, when it shows a page (an explainer, MapSDG) and not a video ---------- */
+.scrim.page{padding:14px}
+.scrim.page .modal{width:min(1240px,100%)}
+.scrim.page .frame{aspect-ratio:auto;height:min(78vh,860px);background:#fff}
+.scrim.page .frame iframe{display:block;width:100%;height:100%;border:0}
+.blend .toasts{z-index:140}
+@media (min-width:1800px){.blend .scrim.page .frame{height:calc(78vh / var(--z))}}
+
+/* ---------- the map: all eight islands at once ---------- */
+.mapb{padding:0 12px 0 10px}
+.mapb svg{width:20px;height:20px;stroke:var(--ink)}
+.mapb .mlabel{text-transform:uppercase;letter-spacing:.03em;font-size:13.5px}
+.mapb[aria-pressed="true"]{background:var(--ink);color:#fff}
+@media (max-width:1500px){.mapb{width:40px;padding:0;justify-content:center}.mapb .mlabel{display:none}}
+.blend main,.blend #prog{transition:opacity .3s}
+.blend.atlas main,.blend.atlas #prog,.blend.atlas #owlsay,.blend.atlas #harisays{opacity:0!important;pointer-events:none}
+.blend.atlas #labels{display:block;pointer-events:none}
+.blend.atlas #gl{cursor:pointer}
+#atlasHint{position:fixed;left:50%;bottom:26px;z-index:8;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;background:var(--ink);color:#fff;border-radius:999px;padding:12px 22px 9px;font-family:var(--display);font-weight:800;font-size:17px;white-space:nowrap;box-shadow:0 5px 0 rgba(26,21,18,.3)}
+#atlasHint span{font-weight:600;color:#D8CFC3}
+.atlas #atlasHint{opacity:1;transform:translate(-50%,0)}
+.wl .wf{width:30px;height:30px;border-radius:9px;background:#2E2621;border:2px dashed #5A4E44;display:grid;place-items:center;flex:none}
+.wl .wf svg{width:20px;height:20px;opacity:.45;filter:grayscale(1) brightness(1.5)}
+.wl .wf.got{background:var(--cream);border:2px solid var(--ink)}
+.wl .wf.got svg{opacity:1;filter:none}
+@media (max-width:760px){#atlasHint{font-size:14.5px;bottom:16px}#atlasHint span{display:none}}
+
+/* on the map nothing in the hidden page may catch a tap meant for an island */
+.blend.atlas main *{pointer-events:none!important}
+
 /* ===== nest.css ===== */
 /* hariprav.in · look proof · the owl and its nest (a layer over blend.css) */
 .nest #trail,.nest .ptsfly{display:none!important}
