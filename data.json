@@ -21,42 +21,42 @@
     "id": "pOZ0IpJpg5Y",
     "title": "திட்டம் தெளிவாத்தான் இருக்கு. ஏன் ஒண்ணுமே நடக்கல?",
     "published": "2026-10-23",
-    "views": 826
+    "views": 827
    },
    {
     "n": 4,
     "id": "pHGH7Zq62xA",
     "title": "வீட்டுல இருந்தா கிளம்பணும். கிளம்பினா வீடு வேணும்!",
     "published": "2026-10-28",
-    "views": 1466
+    "views": 1467
    },
    {
     "n": 5,
     "id": "r_zgxTd2n8g",
     "title": "வளைந்து கொடுக்கும் சப்பாத்தியும், உணர்வைக் கொட்டும் குருமாவும்",
     "published": "2026-10-30",
-    "views": 1252
+    "views": 1255
    },
    {
     "n": 6,
     "id": "DBUNHumABRM",
     "title": "தனித்து நிற்கும் ஆப்பமும், மாற்ற நினைக்காத தேங்காய்ப் பாலும்",
     "published": "2026-11-06",
-    "views": 1496
+    "views": 1497
    },
    {
     "n": 7,
     "id": "inc5IapNf2A",
     "title": "இழைகளால் தாங்கும் இடியாப்பமும், ருசி கொடுக்கும் வடகறியும்",
     "published": "2026-11-13",
-    "views": 643
+    "views": 645
    },
    {
     "n": 8,
     "id": "IHEsJcUp4pI",
     "title": "வேற்றுமையில் ஒற்றுமை தரும் காய்கறி கிச்சடி",
     "published": "2026-11-20",
-    "views": 87
+    "views": 92
    }
   ],
   "trailer": {
@@ -82,34 +82,40 @@
  },
  "latest": [
   {
+   "id": "FXp6WangEY8",
+   "title": "எல்லாரும் நம்மள மாதிரியே இருக்கணும்னு, ஏன் நாம எதிர்பார்க்கறோம்? | #டிபன்சைக்காலஜி",
+   "published": "2026-11-25",
+   "views": 94
+  },
+  {
    "id": "29aGUTDYx48",
    "title": "அம்மா சாப்டியான்னு கேட்டா reply என்ன? AI-க்கு தெரியுமா? | பாவம் AI - Ep. 2 #TamilComedy #Shorts",
    "published": "2026-11-24",
-   "views": 30
+   "views": 35
   },
   {
    "id": "WRzYeSeW7aA",
    "title": "அம்மா சாப்டியான்னு கேட்டா reply என்ன? ChatGPT, Gemini, Claude-க்கு தெரியுமா? | பாவம் AI - Ep. 2",
    "published": "2026-11-24",
-   "views": 46
+   "views": 77
   },
   {
    "id": "qAOZXNLOcHo",
    "title": "இதோ வந்துட்டேன்னா எவ்ளோ நேரம்? AI-க்கு தெரியுமா? | பாவம் AI - Ep. 1 #TamilComedy #Shorts",
    "published": "2026-11-24",
-   "views": 57
+   "views": 67
   },
   {
    "id": "zasPGtjEBGc",
    "title": "ChatGPT, Gemini, Claude, Grok-க்கு தெரியுமா? இதோ வந்துட்டேன்னா எவ்ளோ நேரம்? | பாவம் AI - Ep. 1",
    "published": "2026-11-24",
-   "views": 112
+   "views": 137
   },
   {
    "id": "IHEsJcUp4pI",
    "title": "வேற்றுமையில் ஒற்றுமை தரும் காய்கறி கிச்சடி | #டிபன்சைக்காலஜி #TiffinPsychology · தட்டு 8",
    "published": "2026-11-20",
-   "views": 87
+   "views": 92
   },
   {
    "id": "Q9ZbWiXbvks",
@@ -122,12 +128,6 @@
    "title": "ஏன், ஏன், ஏன்... Children's Day Special Song #shorts #HappyChildrensDay",
    "published": "2026-11-14",
    "views": 26
-  },
-  {
-   "id": "kU-EvOG246k",
-   "title": "ஏன், ஏன், ஏன்... Children's Day Special Song",
-   "published": "2026-11-14",
-   "views": 1530
   }
  ],
  "medium": [
@@ -214,9 +214,9 @@
  ],
  "channel": {
   "subscribers": "8.48K",
-  "videos": 63,
+  "videos": 67,
   "source": "channel page"
  },
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "problems": []
 }
